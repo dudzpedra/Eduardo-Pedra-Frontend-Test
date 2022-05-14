@@ -3,8 +3,14 @@ import { ThumbnailWrapper } from "./styles/Wrapper";
 
 class Thumbnail extends Component {
   render() {
-    return <ThumbnailWrapper key={this.props.image} src={this.props.image} alt={this.props.alt} />;
+    return (
+      <ThumbnailWrapper
+        key={this.props.image}
+        src={this.props.image}
+        alt={this.props.alt}
+      />
+    );
   }
 }
 
-export default Thumbnail
+export default Thumbnail;

@@ -16,6 +16,7 @@ class ProductDetails extends Component {
             {this.props.product.prices[0].amount}
           </p>
         </div>
+        <button style={{ background: 'green', color: '#fff', padding: '1rem 2rem'}}>ADD TO CART</button>
         <div
           dangerouslySetInnerHTML={{ __html: this.props.product.description }}
         ></div>
