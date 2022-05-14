@@ -5,11 +5,15 @@ import * as serviceWorker from "./serviceWorker";
 import { ApolloProvider } from "@apollo/client";
 import client from "./utils/client";
 import AppRoutes from "./pages";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <ApolloProvider client={client}>
-    <AppRoutes />
+    <Provider store={store}>
+      <AppRoutes />
+    </Provider>
   </ApolloProvider>
 );
 

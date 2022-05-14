@@ -1,41 +1,39 @@
 import React, { Component } from "react";
-import GET_ALL_PRODUCTS from "../api/operations/get-all-products";
+import { connect } from "react-redux";
+import { setAllProducts } from "../store/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
-import client from "../utils/client";
 
 class AllProducts extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      all: null,
-    };
-  }
-
   componentDidMount() {
-    const getAll = async () => {
-      try {
-        const { data } = await client.query({
-          query: GET_ALL_PRODUCTS,
-        });
-        if (data) {
-          this.setState({ all: data.category });
-        }
-      } catch (e) {
-        console.error(e);
+    this.props.setAllProducts()
+    /* const setAllProducts = async () => {
+      const category = await fetchAllProducts()
+      if (category) {
+        this.setState({ all: category})
       }
-    };
-    getAll();
+    }
+    setAllProducts() */
   }
 
   render() {
     return (
       <div>
         <h1>All Products</h1>
-        {this.state.all ? <ProductList products={this.state.all.products} /> : <Loading />}
+        {this.props.all ? (
+          <ProductList products={this.props.all.products} />
+        ) : (
+          <Loading />
+        )}
       </div>
     );
   }
 }
 
-export default AllProducts;
+const mapStateToProps = (state) => ({
+  all: state.categories.all
+})
+
+const mapDispatchToProps = {setAllProducts}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllProducts);
