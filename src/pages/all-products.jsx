@@ -7,13 +7,6 @@ import Loading from "../components/ui/Loading";
 class AllProducts extends Component {
   componentDidMount() {
     this.props.setAllProducts()
-    /* const setAllProducts = async () => {
-      const category = await fetchAllProducts()
-      if (category) {
-        this.setState({ all: category})
-      }
-    }
-    setAllProducts() */
   }
 
   render() {

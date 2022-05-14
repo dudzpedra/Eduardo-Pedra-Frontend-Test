@@ -6,8 +6,8 @@ class ImageList extends Component {
   render() {
     return (
       <ListWrapper>
-        {this.props.product.gallery.map((image) => (
-          <Thumbnail key={image} image={image} alt={this.props.product.name} />
+        {this.props.product.gallery.map((image, index) => (
+          <Thumbnail key={image} index={index} image={image} alt={this.props.product.name} />
         ))}
       </ListWrapper>
     );
