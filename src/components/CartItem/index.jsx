@@ -6,6 +6,9 @@ import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 
 class CartItem extends Component {
+  handleAdd = () => {
+    this.props.add(this.props.product)
+  }
   render() {
     return (
       <ItemWrapper>
@@ -16,9 +19,9 @@ class CartItem extends Component {
             <ProductAttributes attributes={this.props.product.attributes} />
             <ProductPrice prices={this.props.product.prices[0]} />
           </div>
-          <div style={{ display: 'flex'}}>
+          <div style={{ display: 'flex', width: '20%', justifyContent: 'space-between'}}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-              <button>+</button>
+              <button onClick={this.handleAdd}>+</button>
               <p>{this.props.product.quantity}</p>
               <button>-</button>
             </div>
