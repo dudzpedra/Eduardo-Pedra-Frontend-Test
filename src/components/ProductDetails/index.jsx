@@ -15,8 +15,9 @@ class ProductDetails extends Component {
   render() {
     return (
       <DetailsWrapper>
-        <ProductHeader />
-        <ProductAttributes />
+        <ProductHeader product={this.props.product} />
+        <ProductAttributes attributes={this.props.product.attributes} />
+        <strong>PRICE:</strong>
         <ProductPrice prices={this.props.product.prices[0]} />
         <AddToCartButton onClick={this.handleAdd} />
         <ProductDescription />

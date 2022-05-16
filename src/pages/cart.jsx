@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { CartWrapper } from '../styles/cart/Wrapper';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import CartList from "../components/CartList";
+import { CartWrapper } from "../styles/cart/Wrapper";
 
 class Cart extends Component {
   componentDidUpdate() {
@@ -10,20 +11,14 @@ class Cart extends Component {
     return (
       <CartWrapper>
         <h1>CART</h1>
-        <hr />
-        {this.props.cart.map(p => (
-          <div key={p.id}>
-            <p>{p.name}</p>
-          </div>
-        ))}
+        <CartList cart={this.props.cart} />
       </CartWrapper>
-    )
+    );
   }
 }
 
 const mapStateToProps = (state) => ({
-  cart: state.cart.items
-})
-//const mapDispatchToProps = {  }
+  cart: state.cart.items,
+});
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps)(Cart);

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class ProductHeader extends Component {
   render() {
@@ -12,8 +11,4 @@ class ProductHeader extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  product: state.products.product
-})
-
-export default connect(mapStateToProps)(ProductHeader)
+export default ProductHeader

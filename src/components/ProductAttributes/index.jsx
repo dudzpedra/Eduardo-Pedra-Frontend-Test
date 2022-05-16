@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import AttributeSet from "../AttributeSet";
 import ColorAttribute from "../ColorAttribute";
 
@@ -21,8 +20,4 @@ class ProductAttributes extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  attributes: state.products.product.attributes
-})
-
-export default connect(mapStateToProps)(ProductAttributes);
+export default ProductAttributes;

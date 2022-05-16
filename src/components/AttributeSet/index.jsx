@@ -6,7 +6,7 @@ class AttributeSet extends Component {
   render() {
     return (
       <div>
-        <h6>{this.props.attribute.name}:</h6>
+        <strong>{this.props.attribute.name.toUpperCase()}:</strong>
         <AttributeWrapper>
           {this.props.attribute.items.map((item) => (
             <AttributeContent key={item.id}>
