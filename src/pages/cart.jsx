@@ -20,7 +20,7 @@ class Cart extends Component {
           <div>
             <p>Your cart is empty.</p>
             <p>
-              <Link to="/all">Go back to home page</Link>
+              <Link to="/">Go back to home page</Link>
             </p>
           </div>
         )}

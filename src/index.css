@@ -13,12 +13,16 @@ a {
 }
 
 nav a {
-  padding: 1rem 0;
-  border-bottom: 4px transparent;
+  padding: 2rem 1rem;
+  border-bottom: 0.5rem transparent;
 }
 
 nav a:hover {
-  border-bottom: 4px solid #55c855;
+  transform: scale(1.1);
+}
+
+nav a:focus {
+  border-bottom: 0.2rem solid #55c855;
 }
 
 a:visited {
