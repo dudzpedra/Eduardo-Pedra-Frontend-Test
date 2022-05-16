@@ -9,6 +9,11 @@ class CartItem extends Component {
   handleAdd = () => {
     this.props.add(this.props.product)
   }
+  
+  handleRemove = () => {
+    this.props.remove(this.props.product.id)
+  }
+
   render() {
     return (
       <ItemWrapper>
@@ -23,7 +28,7 @@ class CartItem extends Component {
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
               <button onClick={this.handleAdd}>+</button>
               <p>{this.props.product.quantity}</p>
-              <button>-</button>
+              <button onClick={this.handleRemove}>-</button>
             </div>
             <img
               src={this.props.product.gallery[0]}
