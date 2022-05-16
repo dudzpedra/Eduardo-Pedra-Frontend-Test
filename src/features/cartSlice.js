@@ -15,16 +15,16 @@ const cartSlice = createSlice({
       const alreadyOnCart = state.items.find(item => item.id === newItem.id)
       if (alreadyOnCart) {
         alreadyOnCart.quantity++
-        alreadyOnCart.totalPrice += newItem.prices.amount
+        alreadyOnCart.totalPrice += newItem.prices[0].amount
       } else {
         state.items.push({
           ...newItem,
           quantity: 1,
-          totalPrice: newItem.prices.amount
+          totalPrice: newItem.prices[0].amount
         })
         state.quantity++
       }
-      state.total += newItem.prices.amount
+      state.total += newItem.prices[0].amount
     },
     remove(state, action) {
       const idToRemove = action.payload
@@ -34,9 +34,9 @@ const cartSlice = createSlice({
         state.quantity--
       } else {
         alreadyOnCart.quantity--
-        alreadyOnCart.totalPrice -= alreadyOnCart.prices.amount
+        alreadyOnCart.totalPrice -= alreadyOnCart.prices[0].amount
       }
-      state.total -= alreadyOnCart.prices.amount
+      state.total -= alreadyOnCart.prices[0].amount
     }
   },
 });
