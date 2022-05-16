@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const ButtonWrapper = styled.button`
-  background: #00cd00;
+  background: rgba(94, 206, 123, 1);
+  border: none;
   color: #fff;
   padding: 1rem 2rem;
-  opacity: 0.8;
   &:hover {
     cursor: pointer;
-    opacity: 1;
+    opacity: 0.9;
   }
 `;
 
-ButtonWrapper.displayName = 'ButtonWrapper'
+ButtonWrapper.displayName = "ButtonWrapper";
