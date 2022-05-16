@@ -6,6 +6,7 @@ import { Navigation } from "./styles/Navigation";
 import { HeaderWrapper } from "./styles/Wrapper";
 import logo from "../../../assets/a-logo.svg";
 import cart from "../../../assets/cart.svg";
+import CurrencySwitcher from "../../CurrencySwitcher";
 
 class Header extends Component {
   render() {
@@ -19,7 +20,7 @@ class Header extends Component {
           </Navigation>
           <img src={logo} alt="Logo" />
           <Actions>
-            <div>$</div>
+            <CurrencySwitcher />
             <Link to="/cart">
               <img src={cart} alt="Shopping Cart" />
             </Link>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import ProductAttributes from "../ProductAttributes";
 import ProductHeader from "../ProductHeader";
 import ProductPrice from "../ProductPrice";
@@ -22,7 +23,7 @@ class CartItem extends Component {
           <div>
             <ProductHeader product={this.props.product} />
             <ProductAttributes attributes={this.props.product.attributes} />
-            <ProductPrice prices={this.props.product.prices[0]} />
+            <ProductPrice prices={this.props.product.prices[this.props.index]} />
           </div>
           <div style={{ display: 'flex', width: '20%', justifyContent: 'space-between'}}>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -43,4 +44,8 @@ class CartItem extends Component {
   }
 }
 
-export default CartItem;
+const mapStateToProps = (state) => ({
+  index: state.currency.selectedIndex
+})
+
+export default connect(mapStateToProps)(CartItem);

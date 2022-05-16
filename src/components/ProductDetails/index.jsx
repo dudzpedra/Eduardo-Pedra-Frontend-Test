@@ -18,7 +18,7 @@ class ProductDetails extends Component {
         <ProductHeader product={this.props.product} />
         <ProductAttributes attributes={this.props.product.attributes} />
         <strong>PRICE:</strong>
-        <ProductPrice prices={this.props.product.prices[0]} />
+        <ProductPrice prices={this.props.product.prices[this.props.index]} />
         <AddToCartButton onClick={this.handleAdd} />
         <ProductDescription />
       </DetailsWrapper>
@@ -28,6 +28,7 @@ class ProductDetails extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.products.product,
+  index: state.currency.selectedIndex
 });
 const mapDispatchToProps = { addToCart };
 

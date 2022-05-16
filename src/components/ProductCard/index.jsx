@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import ProductPrice from "../ProductPrice";
 import { Image } from "./styles/Image";
@@ -15,7 +16,7 @@ class ProductCard extends Component {
           />
           <Content>
             <p>{this.props.product.name}</p>
-            <ProductPrice prices={this.props.product.prices[0]} />
+            <ProductPrice prices={this.props.product.prices[this.props.index]} />
           </Content>
         </Card>
       </Link>
@@ -23,4 +24,8 @@ class ProductCard extends Component {
   }
 }
 
-export default ProductCard;
+const mapStateToProps = (state) => ({
+  index: state.currency.selectedIndex
+})
+
+export default connect(mapStateToProps)(ProductCard);
