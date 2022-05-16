@@ -1,20 +1,19 @@
 import React, { Component } from "react";
+import { AttributeContent } from "./styles/Content";
+import { AttributeWrapper } from "./styles/Wrapper";
 
 class AttributeSet extends Component {
   render() {
     return (
-      <div key={this.props.attribute.id}>
+      <div>
         <h6>{this.props.attribute.name}:</h6>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <AttributeWrapper>
           {this.props.attribute.items.map((item) => (
-            <p
-              style={{ margin: 2, border: "1px solid", padding: 2 }}
-              key={item.id}
-            >
+            <AttributeContent key={item.id}>
               {item.displayValue}
-            </p>
+            </AttributeContent>
           ))}
-        </div>
+        </AttributeWrapper>
       </div>
     );
   }

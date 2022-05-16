@@ -6,6 +6,7 @@ import Clothes from './clothes'
 import Tech from './tech'
 import Header from '../components/ui/Header'
 import Product from './product'
+import Cart from './cart'
 
 class AppRoutes extends Component {
   render() {
@@ -18,6 +19,7 @@ class AppRoutes extends Component {
           <Route path='/clothes' element={<Clothes />} />
           <Route path='/tech' element={<Tech />} />
           <Route path='/products/:id' element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </Router>
     )

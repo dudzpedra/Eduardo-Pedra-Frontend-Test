@@ -3,18 +3,21 @@ import { connect } from "react-redux";
 import { setAllProducts } from "../store/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
+import { AllProductsWrapper } from "../styles/all_products/Wrapper";
 
 class AllProducts extends Component {
   componentDidMount() {
-    this.props.setAllProducts()
+    this.props.setAllProducts('all');
   }
 
   render() {
     return (
       <div>
-        <h1>All Products</h1>
         {this.props.all ? (
-          <ProductList products={this.props.all.products} />
+          <AllProductsWrapper>
+            <h1>All Products</h1>
+            <ProductList products={this.props.all.products} />
+          </AllProductsWrapper>
         ) : (
           <Loading />
         )}
@@ -24,9 +27,9 @@ class AllProducts extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  all: state.categories.all
-})
+  all: state.categories.all,
+});
 
-const mapDispatchToProps = {setAllProducts}
+const mapDispatchToProps = { setAllProducts };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllProducts);

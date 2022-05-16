@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { setClothesProducts } from "../store/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
+import { ClothesWrapper } from "../styles/clothes/Wrapper";
 
 class Clothes extends Component {
   componentDidMount() {
-    this.props.setClothesProducts();
+    this.props.setClothesProducts('clothes');
   }
 
   render() {
     return (
-      <div>
+      <ClothesWrapper>
         {this.props.clothes ? (
           <>
             <h1>{this.props.clothes.name.toUpperCase()}</h1>
@@ -20,7 +21,7 @@ class Clothes extends Component {
         ) : (
           <Loading />
         )}
-      </div>
+      </ClothesWrapper>
     );
   }
 }

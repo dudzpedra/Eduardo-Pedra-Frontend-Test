@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Actions = styled.div`
-  width: 30%;
+  width: 10%;
   display: flex;
   align-items: center;
   justify-content: space-around;

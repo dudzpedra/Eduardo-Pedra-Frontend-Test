@@ -3,22 +3,25 @@ import { connect } from "react-redux";
 import { setTechProducts } from "../store/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
+import { TechWrapper } from "../styles/tech/Wrapper";
 
 class Tech extends Component {
   componentDidMount() {
-    this.props.setTechProducts();
+    this.props.setTechProducts('tech');
   }
 
   render() {
     return (
-      <div>
-        <h1>Tech Category</h1>
+      <TechWrapper>
         {this.props.tech ? (
-          <ProductList products={this.props.tech.products} />
+          <>
+            <h1>Tech Category</h1>
+            <ProductList products={this.props.tech.products} />
+          </>
         ) : (
           <Loading />
         )}
-      </div>
+      </TechWrapper>
     );
   }
 }
