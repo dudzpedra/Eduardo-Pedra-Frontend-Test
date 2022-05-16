@@ -7,7 +7,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;;
   &:hover {
-    box-shadow: 2px 2px 8px 4px #e5e5e5;
+    box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
   }
 `;
 
