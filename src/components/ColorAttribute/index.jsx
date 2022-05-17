@@ -1,23 +1,25 @@
 import React, { Component } from "react";
+import { ColorContent } from "./styles/Content";
+import { ColorListWrapper, ColorWrapper } from "./styles/Wrapper";
 
 class ColorAttribute extends Component {
   render() {
     return (
       <div>
         <strong>{this.props.attribute.name.toUpperCase()}:</strong>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <ColorListWrapper>
           {this.props.attribute.items.map((item) => (
-            <p
-              style={{
-                marginRight: 5,
-                backgroundColor: item.value,
-                width: 30,
-                height: 30
-              }}
-              key={item.id}
-            ></p>
+            <ColorWrapper key={item.id} onClick={() => alert('oi')}>
+              <ColorContent
+                style={{
+                  backgroundColor: item.value,
+                  border:
+                    item.value === "#FFFFFF" ? "1px solid #000" : "transparent",
+                }}
+              ></ColorContent>
+            </ColorWrapper>
           ))}
-        </div>
+        </ColorListWrapper>
       </div>
     );
   }
