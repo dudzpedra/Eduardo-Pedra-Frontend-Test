@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCurrencies, setCurrency } from "../../store/currencyActions";
+import { setIndex } from "../../store/cartActions";
 
 class CurrencySwitcher extends Component {
   componentDidMount() {
@@ -8,11 +9,12 @@ class CurrencySwitcher extends Component {
   }
   handleSelect = ({ target }) => {
     this.props.setCurrency(target.value);
+    this.props.setIndex(target.value);
   };
   render() {
     return (
       <>
-        <label htmlFor="currencies">{this.props.selectedCurrency.symbol}</label>
+        {/* <label htmlFor="currencies">{this.props.selectedCurrency.symbol}</label> */}
         <select
           name="currencies"
           id="currencies"
@@ -39,9 +41,9 @@ class CurrencySwitcher extends Component {
 
 const mapStateToProps = (state) => ({
   currencies: state.currency.currencies,
-  selectedCurrency: state.currency.selectedCurrency,
+  /* selectedCurrency: state.currency.selectedCurrency, */
 });
 
-const mapDispatchToProps = { getCurrencies, setCurrency };
+const mapDispatchToProps = { getCurrencies, setCurrency, setIndex };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrencySwitcher);
