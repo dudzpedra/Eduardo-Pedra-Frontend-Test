@@ -10,7 +10,7 @@ import ProductDescription from "../ProductDescription";
 
 class ProductDetails extends Component {
   handleAdd = () => {
-    this.props.addToCart(this.props.product);
+    this.props.addToCart({...this.props.product, selectedAttributes: this.props.selectedAttributes});
   };
   render() {
     return (
@@ -28,7 +28,8 @@ class ProductDetails extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.products.product,
-  index: state.currency.selectedIndex
+  index: state.currency.selectedIndex,
+  attributes: state.cart.selectedAttributes
 });
 const mapDispatchToProps = { addToCart };
 

@@ -7,13 +7,13 @@ class ProductAttributes extends Component {
     return (
       <div>
         {this.props.attributes.map((att) => (
-          <>
+          <div key={att.id}>
             {att.name === "Color" ? (
-              <ColorAttribute key={att.id} attribute={att} />
+              <ColorAttribute attribute={att} />
             ) : (
-              <AttributeSet key={att.id} attribute={att} />
+              <AttributeSet attribute={att} />
             )}
-          </>
+          </div>
         ))}
       </div>
     );

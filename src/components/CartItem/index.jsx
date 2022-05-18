@@ -45,7 +45,8 @@ class CartItem extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  index: state.currency.selectedIndex
+  index: state.currency.selectedIndex,
+  attributes: state.cart.selectedAttributes
 })
 
 export default connect(mapStateToProps)(CartItem);

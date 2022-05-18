@@ -1,29 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { AttributeContent } from "./styles/Content";
 import { AttributeWrapper } from "./styles/Wrapper";
+import { selectAttribute } from "../../store/cartActions";
 
 class AttributeSet extends Component {
-  /* constructor(props) {
-    super(props);
-    this.state = {
-      isSelected: false,
-    };
-  }
-  handleClick = ({ target }) => {
-    if (this.state.isSelected) {
-      this.setState({
-        isSelected: false,
-      });
-      target.style.background = "#fff";
-      target.style.color = "#000";
-    } else {
-      this.setState({
-        isSelected: true
-      })
-      target.style.background = "#000";
-      target.style.color = "#fff";
-    }
-  }; */
+  handleClick = (attribute) => {
+    console.log(attribute);
+    this.props.selectAttribute(attribute)
+  };
   render() {
     return (
       <div>
@@ -32,7 +17,7 @@ class AttributeSet extends Component {
           {this.props.attribute.items.map((item) => (
             <AttributeContent
               key={item.id}
-              onClick={this.handleClick}
+              onClick={() => this.handleClick(item)}
               /* style={{
                 background: this.state.isSelected && "#000",
                 color: this.state.isSelected && "#fff",
@@ -42,9 +27,17 @@ class AttributeSet extends Component {
             </AttributeContent>
           ))}
         </AttributeWrapper>
+        {/* {this.props.selectedAttributes.map(att => (
+          <p key={att.id}>{att.name}</p>
+        ))} */}
       </div>
     );
   }
 }
 
-export default AttributeSet;
+const mapStateToProps = (state) => ({
+  selectedAttributes: state.cart.selectedAttributes
+})
+const mapDispatchToProps = { selectAttribute };
+
+export default connect(mapStateToProps, mapDispatchToProps)(AttributeSet);
