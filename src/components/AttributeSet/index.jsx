@@ -6,8 +6,12 @@ import { selectAttribute } from "../../store/productActions";
 
 class AttributeSet extends Component {
   handleClick = (itemId) => {
-    this.props.selectAttribute({attribute: this.props.attribute, itemId: itemId})
+    this.props.selectAttribute({
+      attribute: this.props.attribute,
+      itemId: itemId,
+    });
   };
+
   render() {
     return (
       <div>
@@ -18,25 +22,22 @@ class AttributeSet extends Component {
               key={item.id}
               onClick={() => this.handleClick(item.id)}
               /* style={{
-                background: this.state.isSelected && "#000",
-                color: this.state.isSelected && "#fff",
+                background: this.state.itemsIds === item.id && "#000",
+                color: this.state.item && "#fff",
               }} */
             >
               {item.value}
             </AttributeContent>
           ))}
         </AttributeWrapper>
-        {/* {this.props.selectedAttributes.map(att => (
-          <p key={att.id}>{att.name}</p>
-        ))} */}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  selectedAttributes: state.cart.selectedAttributes
-})
+  selectedAttributes: state.products.selectedAttributes,
+});
 const mapDispatchToProps = { selectAttribute };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AttributeSet);

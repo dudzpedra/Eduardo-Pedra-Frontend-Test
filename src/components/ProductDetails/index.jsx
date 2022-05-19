@@ -11,26 +11,46 @@ import ProductDescription from "../ProductDescription";
 
 class ProductDetails extends Component {
   handleAdd = () => {
-    const selectedAttributes = this.props.attributes
-    const productId = this.props.product.id
-    const attributeItemsIds = selectedAttributes.map(att => att.items[0].id)
+    const selectedAttributes = this.props.attributes;
 
-    const newItemId = `${productId}-${attributeItemsIds.map(id => id).join('-')}`
+    if (selectedAttributes.length > 0) {
+      const productId = this.props.product.id;
+      const attributeItemsIds = selectedAttributes.map(
+        (att) => att.items[0].id
+      );
 
-    const itemToAdd = {
-      ...this.props.product,
-      id: newItemId,
-      attributes: selectedAttributes,
-      quantity: 1
+      const newItemId = `${productId}-${attributeItemsIds
+        .map((id) => id)
+        .join("-")}`;
+
+      const itemToAdd = {
+        ...this.props.product,
+        id: newItemId,
+        attributes: selectedAttributes,
+        quantity: 1,
+      };
+
+      this.props.addToCart(itemToAdd);
+
+      alert("Product added to cart succesfully");
+
+      let path = window.location.pathname;
+      let id = path.replace("/products/", "");
+
+      this.props.getProduct(id);
+    } else {
+      alert('You must select the attributes')
     }
-
-    this.props.addToCart(itemToAdd);
-    
-    let path = window.location.pathname;
-    let id = path.replace("/products/", "");
-    
-    this.props.getProduct(id);
   };
+
+  componentDidMount() {
+    console.log(this.props.attributes);
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.attributes);
+  }
+
   render() {
     return (
       <DetailsWrapper>

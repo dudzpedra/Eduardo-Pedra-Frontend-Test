@@ -14,10 +14,6 @@ class Product extends Component {
     this.props.getProduct(id);
   }
 
-  componentDidUpdate() {
-    console.log(this.props.attributes);
-  }
-
   render() {
     return (
       <>
