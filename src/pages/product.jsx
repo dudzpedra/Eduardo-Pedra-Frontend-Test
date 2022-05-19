@@ -11,7 +11,11 @@ class Product extends Component {
   componentDidMount() {
     let path = window.location.pathname;
     let id = path.replace("/products/", "");
-    this.props.getProduct(id)
+    this.props.getProduct(id);
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.attributes);
   }
 
   render() {
@@ -33,6 +37,7 @@ class Product extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.products.product,
+  attributes: state.products.selectedAttributes,
 });
 
 const mapDispatchToProps = { getProduct };

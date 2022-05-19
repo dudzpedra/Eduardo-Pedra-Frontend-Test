@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { AttributeContent } from "./styles/Content";
 import { AttributeWrapper } from "./styles/Wrapper";
-import { selectAttribute } from "../../store/cartActions";
+import { selectAttribute } from "../../store/productActions";
 
 class AttributeSet extends Component {
-  handleClick = (attribute) => {
-    console.log(attribute);
-    this.props.selectAttribute(attribute)
+  handleClick = (itemId) => {
+    this.props.selectAttribute({attribute: this.props.attribute, itemId: itemId})
   };
   render() {
     return (
@@ -17,7 +16,7 @@ class AttributeSet extends Component {
           {this.props.attribute.items.map((item) => (
             <AttributeContent
               key={item.id}
-              onClick={() => this.handleClick(item)}
+              onClick={() => this.handleClick(item.id)}
               /* style={{
                 background: this.state.isSelected && "#000",
                 color: this.state.isSelected && "#fff",

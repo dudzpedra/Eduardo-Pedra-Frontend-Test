@@ -5,7 +5,6 @@ const initialState = {
   total: [0, 0, 0, 0, 0],
   quantity: 0,
   pricesIndex: 0,
-  selectedAttributes: []
 };
 
 const cartSlice = createSlice({
@@ -14,18 +13,13 @@ const cartSlice = createSlice({
   reducers: {
     add(state, action) {
       const newItem = action.payload
-      console.log('item received to cart:', newItem);
-      const alreadyOnCart = state.items.find(item => item.id === newItem.id)
+      
+      const alreadyOnCart = state.items.find(item => (item.id === newItem.id))
+      
       if (alreadyOnCart) {
         alreadyOnCart.quantity++
       } else {
-        const itemToAdd = {
-          ...newItem,
-          quantity: 1,
-          selectedAttributes: state.selectedAttributes
-        } 
-        console.log('item to add: ', itemToAdd);
-        state.items.push(itemToAdd)
+        state.items.push(newItem)
         //try to implement total.fill to fill with 0 and use prices length
       }
       state.total = state.total.map((value, index) => value += newItem.prices[index].amount)
@@ -44,12 +38,9 @@ const cartSlice = createSlice({
     },
     setPriceIndex(state, action) {
       state.pricesIndex = action.payload
-    },
-    setAttributes(state, action) {
-      state.selectedAttributes.push(action.payload)
     }
   },
 });
 
-export const { add, remove, setPriceIndex, setAttributes } = cartSlice.actions;
+export const { add, remove, setPriceIndex } = cartSlice.actions;
 export default cartSlice.reducer;

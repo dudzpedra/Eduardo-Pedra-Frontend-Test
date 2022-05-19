@@ -8,7 +8,6 @@ const fetchProduct = async (id) => {
       variables: { id: id }
     })
     if (data) {
-      console.log(data.product);
       return data.product
     }
   } catch (e) {

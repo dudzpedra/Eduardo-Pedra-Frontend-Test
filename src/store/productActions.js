@@ -1,4 +1,4 @@
-import { selectImage, setProduct } from '../features/productSlice'
+import { selectImage, setAttribute, setProduct } from '../features/productSlice'
 import fetchProduct from '../services/fetch-product'
 
 export const getProduct = (id) => {
@@ -18,3 +18,13 @@ export const setImageIndex = (id) => {
     dispatch(selectImage(id))
   }
 }
+
+export const selectAttribute = (payload) => {
+  return (dispatch) => {
+    try {
+      dispatch(setAttribute(payload));
+    } catch (e) {
+      console.error(e);
+    }
+  };
+};
