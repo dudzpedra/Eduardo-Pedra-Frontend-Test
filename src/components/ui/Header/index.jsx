@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Actions } from "./styles/Actions";
+import { Actions, CartAction, CartQuantity } from "./styles/Actions";
 import { HeaderContent } from "./styles/Content";
 import { Navigation } from "./styles/Navigation";
 import { HeaderWrapper } from "./styles/Wrapper";
 import logo from "../../../assets/a-logo.svg";
 import cart from "../../../assets/cart.svg";
 import CurrencySwitcher from "../../CurrencySwitcher";
+import { connect } from "react-redux";
 
 class Header extends Component {
   render() {
@@ -22,7 +23,10 @@ class Header extends Component {
           <Actions>
             <CurrencySwitcher />
             <Link to="/cart">
-              <img src={cart} alt="Shopping Cart" />
+              <CartAction>
+                <img src={cart} alt="Shopping Cart" />
+                <CartQuantity>{this.props.quantity}</CartQuantity>
+              </CartAction>
             </Link>
           </Actions>
         </HeaderContent>
@@ -31,4 +35,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+  quantity: state.cart.quantity,
+});
+
+export default connect(mapStateToProps)(Header);
