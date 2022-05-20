@@ -12,6 +12,7 @@ class AppRoutes extends Component {
     return (
       <Router>
         <Header />
+        <div id="portal"></div>
         <Routes>
           <Route index path='/' element={<AllProducts />} />
           <Route path='/clothes' element={<Clothes />} />

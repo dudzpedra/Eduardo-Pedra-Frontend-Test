@@ -39,25 +39,19 @@ class ProductDetails extends Component {
 
       this.props.getProduct(id);
     } else {
-      alert('You must select the attributes')
+      alert("You must select the attributes");
     }
   };
-
-  componentDidMount() {
-    console.log(this.props.attributes);
-  }
-
-  componentDidUpdate() {
-    console.log(this.props.attributes);
-  }
 
   render() {
     return (
       <DetailsWrapper>
         <ProductHeader product={this.props.product} />
         <ProductAttributes attributes={this.props.product.attributes} />
-        <strong>PRICE:</strong>
-        <ProductPrice prices={this.props.product.prices[this.props.index]} />
+        <div>
+          <strong>PRICE:</strong>
+          <ProductPrice prices={this.props.product.prices[this.props.index]} />
+        </div>
         <AddToCartButton onClick={this.handleAdd} />
         <ProductDescription />
       </DetailsWrapper>

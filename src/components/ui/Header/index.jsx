@@ -8,8 +8,26 @@ import logo from "../../../assets/a-logo.svg";
 import cart from "../../../assets/cart.svg";
 import CurrencySwitcher from "../../CurrencySwitcher";
 import { connect } from "react-redux";
+import CartOverlay from "../../CartOverlay";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
+
+  handleOpen = () =>
+    this.setState({
+      open: true,
+    });
+
+  handleClose = () =>
+    this.setState({
+      open: false,
+    });
+
   render() {
     return (
       <HeaderWrapper>
@@ -22,12 +40,11 @@ class Header extends Component {
           <img src={logo} alt="Logo" />
           <Actions>
             <CurrencySwitcher />
-            <Link to="/cart">
-              <CartAction>
-                <img src={cart} alt="Shopping Cart" />
-                <CartQuantity>{this.props.quantity}</CartQuantity>
-              </CartAction>
-            </Link>
+            <CartAction onClick={() => this.setState({ open: !this.state.open })}>
+              <img src={cart} alt="Shopping Cart" />
+              {this.props.quantity > 0 && <CartQuantity>{this.props.quantity}</CartQuantity>}
+            </CartAction>
+            <CartOverlay open={this.state.open} onClose={this.handleClose} />
           </Actions>
         </HeaderContent>
       </HeaderWrapper>

@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import ProductBrand from '../ProductBrand'
+import ProductName from '../ProductName'
 
 class ProductHeader extends Component {
   render() {
     return (
       <div>
-        <h4>{this.props.product.brand}</h4>
-        <h5>{this.props.product.name}</h5>
+        <ProductBrand brand={this.props.product.brand} />
+        <ProductName name={this.props.product.name} />
       </div>
     )
   }
