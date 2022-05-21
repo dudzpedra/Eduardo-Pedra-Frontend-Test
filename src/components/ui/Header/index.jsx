@@ -33,16 +33,23 @@ class Header extends Component {
       <HeaderWrapper>
         <HeaderContent>
           <Navigation>
-            <Link to="/">All</Link>
-            <Link to="/clothes">Clothes</Link>
-            <Link to="/tech">Tech</Link>
+            {this.props.categories &&
+              this.props.categories.map((category) => (
+                <Link to={category.name === "all" ? "/" : "/" + category.name}>
+                  {category.name.toUpperCase()}
+                </Link>
+              ))}
           </Navigation>
           <img src={logo} alt="Logo" />
           <Actions>
             <CurrencySwitcher />
-            <CartAction onClick={() => this.setState({ open: !this.state.open })}>
+            <CartAction
+              onClick={() => this.setState({ open: !this.state.open })}
+            >
               <img src={cart} alt="Shopping Cart" />
-              {this.props.quantity > 0 && <CartQuantity>{this.props.quantity}</CartQuantity>}
+              {this.props.quantity > 0 && (
+                <CartQuantity>{this.props.quantity}</CartQuantity>
+              )}
             </CartAction>
             <CartOverlay open={this.state.open} onClose={this.handleClose} />
           </Actions>
@@ -54,6 +61,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   quantity: state.cart.quantity,
+  categories: state.categories.categoriesList,
 });
 
 export default connect(mapStateToProps)(Header);

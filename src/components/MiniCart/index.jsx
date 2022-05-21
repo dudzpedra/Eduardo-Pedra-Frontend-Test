@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import ProductAttributes from "../ProductAttributes";
 import ProductName from "../ProductName";
 import ProductPrice from "../ProductPrice";
@@ -33,9 +34,43 @@ class MiniCart extends Component {
               add={() => this.handleAdd(item)}
               remove={() => this.handleRemove(item.id)}
             />
-            <img src={item.gallery[this.props.imgIndex]} alt={item.name} width='40%' />
+            <img
+              src={item.gallery[this.props.imgIndex]}
+              alt={item.name}
+              width="40%"
+            />
           </MiniCartContent>
         ))}
+        <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+          <p><strong>Total</strong></p>
+          <p><strong>{this.props.total[this.props.priceIndex]}</strong></p>
+        </div>
+        <div style={{ display: "flex", width: "100%", justifyContent: 'space-between' }}>
+          <Link to="/cart">
+            <div
+              style={{
+                border: "1px solid rgba(29, 31, 34, 1)",
+                background: "#fff",
+                padding: "1rem 2rem",
+                width: '40%'
+              }}
+              onClick={this.props.close}
+            >
+              VIEW BAG
+            </div>
+          </Link>
+          <div
+            style={{
+              border: "1px solid rgba(29, 31, 34, 1)",
+              background: "rgba(94, 206, 123, 1)",
+              padding: "1rem 2rem",
+              width: '40%'
+            }}
+            onClick={this.props.close}
+          >
+            CHECKOUT
+          </div>
+        </div>
       </MiniCartWrapper>
     );
   }
@@ -43,7 +78,8 @@ class MiniCart extends Component {
 
 const mapStateToProps = (state) => ({
   priceIndex: state.currency.selectedIndex,
-  imgIndex: state.products.selectedImageIndex
+  imgIndex: state.products.selectedImageIndex,
+  total: state.cart.total
 });
 
 export default connect(mapStateToProps)(MiniCart);

@@ -18,6 +18,7 @@ class CartOverlay extends Component {
             items={this.props.items}
             add={this.props.addToCart}
             remove={this.props.removeFromCart}
+            close={this.props.onClose}
           />
         </ModalWrapper>
       </>,

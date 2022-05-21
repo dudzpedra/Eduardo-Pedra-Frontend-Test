@@ -9,6 +9,9 @@ export const Actions = styled.div`
 
 export const CartAction = styled.div`
   position: relative;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const CartQuantity = styled.div`

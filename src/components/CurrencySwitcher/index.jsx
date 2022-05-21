@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCurrencies, setCurrency } from "../../store/currencyActions";
 import { setIndex } from "../../store/cartActions";
+import { CurrencyWrapper } from "./styles/Wrapper";
+import { CurrencyOption } from "./styles/Option";
 
 class CurrencySwitcher extends Component {
   componentDidMount() {
@@ -15,7 +17,7 @@ class CurrencySwitcher extends Component {
     return (
       <>
         {/* <label htmlFor="currencies">{this.props.selectedCurrency.symbol}</label> */}
-        <select
+        <CurrencyWrapper
           name="currencies"
           id="currencies"
           style={{
@@ -25,15 +27,15 @@ class CurrencySwitcher extends Component {
         >
           {this.props.currencies &&
             this.props.currencies.map((c, index) => (
-              <option
+              <CurrencyOption
                 key={c.label}
                 defaultValue={c.label === "USD" ? true : false}
                 value={index}
               >
                 {c.symbol} {c.label}
-              </option>
+              </CurrencyOption>
             ))}
-        </select>
+        </CurrencyWrapper>
       </>
     );
   }

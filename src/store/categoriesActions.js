@@ -1,33 +1,23 @@
-import { setAll, setClothes, setTech } from "../features/categorySlice";
+import { setCategories, setCategory } from "../features/categorySlice";
+import fetchCategories from "../services/fetch-categories";
 import fetchCategory from "../services/fetch-category";
 
-export const setAllProducts = (name) => {
+export const getCategories = () => {
   return async (dispatch) => {
     try {
-      const data = await fetchCategory(name);
-      dispatch(setAll(data));
+      const data = await fetchCategories();
+      dispatch(setCategories(data));
     } catch (e) {
       console.error(e);
     }
   };
 };
 
-export const setClothesProducts = (name) => {
+export const getCategory = (name) => {
   return async (dispatch) => {
     try {
       const data = await fetchCategory(name);
-      dispatch(setClothes(data));
-    } catch (e) {
-      console.error(e);
-    }
-  };
-};
-
-export const setTechProducts = (name) => {
-  return async (dispatch) => {
-    try {
-      const data = await fetchCategory(name);
-      dispatch(setTech(data));
+      dispatch(setCategory(data));
     } catch (e) {
       console.error(e);
     }
