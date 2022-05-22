@@ -4,7 +4,8 @@ export const Actions = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-content: space-between;
+  width: 25%;
+  justify-content: flex-end;
 `;
 
 export const CartAction = styled.div`
