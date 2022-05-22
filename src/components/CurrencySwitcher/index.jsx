@@ -32,9 +32,9 @@ class CurrencySwitcher extends Component {
     return (
       <CurrencyWrapper>
         <CurrencyHeader onClick={this.toggleMenu}>
-          <strong>
+          <p>
             {this.state.selected !== null ? this.state.selected : "$"}
-          </strong>
+          </p>
           <img
             src={this.state.showItems ? up : down}
             alt="Select Currency"
