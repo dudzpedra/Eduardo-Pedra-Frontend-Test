@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import CartItemAttributes from "../CartItemAttributes";
 import ProductAttributes from "../ProductAttributes";
 import ProductHeader from "../ProductHeader";
 import ProductPrice from "../ProductPrice";
@@ -22,7 +23,8 @@ class CartItem extends Component {
         <ItemContent>
           <div>
             <ProductHeader product={this.props.product} />
-            <ProductAttributes attributes={this.props.product.attributes} />
+            <CartItemAttributes item={this.props.product} />
+            {/* <ProductAttributes attributes={this.props.product.attributes} /> */}
             <ProductPrice prices={this.props.product.prices[this.props.index]} />
           </div>
           <div style={{ display: 'flex', width: '20%', justifyContent: 'space-between'}}>

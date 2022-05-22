@@ -29,7 +29,6 @@ class MiniCart extends Component {
               <ProductName name={item.name} />
               <ProductPrice prices={item.prices[this.props.priceIndex]} />
               <CartItemAttributes item={item} />
-              {/* <ProductAttributes item={item} /> */}
             </DetailsWrapper>
             <ProductQuantity
               product={item}
