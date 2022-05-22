@@ -9,12 +9,12 @@ class CartItemAttributes extends Component {
         {this.props.item.attributes
           .filter((att) => att.type !== "swatch")
           .map((att) => (
-            <CartAttribute attribute={att} item={this.props.item} />
+            <CartAttribute key={att.id} attribute={att} item={this.props.item} />
           ))}
         {this.props.item.attributes
           .filter((att) => att.type === "swatch")
           .map((att) => (
-            <CartSwatchAttribute attribute={att} item={this.props.item} />
+            <CartSwatchAttribute key={att.id} attribute={att} item={this.props.item} />
           ))}
       </div>
     );

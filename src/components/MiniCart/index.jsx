@@ -51,8 +51,8 @@ class MiniCart extends Component {
               style={{
                 border: "1px solid rgba(29, 31, 34, 1)",
                 background: "#fff",
-                padding: ".5rem 1rem",
-                minWidth: '40%'
+                padding: "16px 32px",
+                fontSize: '14px',
               }}
               onClick={this.props.close}
             >
@@ -63,8 +63,8 @@ class MiniCart extends Component {
             style={{
               border: "none",
               background: "rgba(94, 206, 123, 1)",
-              padding: ".5rem 1rem",
-              minWidth: '40%',
+              padding: "16px 32px",
+              fontSize: '14px',
               color: '#fff',
               textAlign: 'center'
             }}
