@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import AttributeSet from "../AttributeSet";
 import ColorAttribute from "../ColorAttribute";
+import { ProductAttributesWrapper } from "./styles/Wrapper";
 
 class ProductAttributes extends Component {
   render() {
     return (
-      <div>
-        {this.props.attributes.map((att) => (
-          <div key={att.id}>
-            {att.name === "Color" ? (
-              <ColorAttribute attribute={att} />
-            ) : (
-              <AttributeSet attribute={att} />
-            )}
-          </div>
-        ))}
-      </div>
+      <ProductAttributesWrapper>
+        {this.props.attributes
+          .filter((att) => att.type !== "swatch")
+          .map((att) => (
+            <AttributeSet key={att.id} attribute={att} item={this.props.item} />
+          ))}
+        {this.props.attributes
+          .filter((att) => att.type === "swatch")
+          .map((att) => (
+            <ColorAttribute key={att.id} attribute={att} item={this.props.item} />
+          ))}
+      </ProductAttributesWrapper>
     );
   }
 }
