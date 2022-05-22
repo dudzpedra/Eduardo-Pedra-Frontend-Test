@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItemAttributes from "../CartItemAttributes";
-import ProductAttributes from "../ProductAttributes";
 import ProductName from "../ProductName";
 import ProductPrice from "../ProductPrice";
 import ProductQuantity from "../ProductQuantity";
