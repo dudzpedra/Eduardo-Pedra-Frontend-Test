@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Actions = styled.div`
-  width: 25%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  gap: 1rem;
+  justify-content: space-between;
 `;
 
 export const CartAction = styled.div`
