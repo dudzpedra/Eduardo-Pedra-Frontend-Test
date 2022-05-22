@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import CartItemAttributes from "../CartItemAttributes";
 import ProductAttributes from "../ProductAttributes";
 import ProductName from "../ProductName";
 import ProductPrice from "../ProductPrice";
@@ -21,13 +22,14 @@ class MiniCart extends Component {
   render() {
     return (
       <MiniCartWrapper>
-        <h4>My Bag, {this.props.quantity} items</h4>
+        <strong>My Bag, {this.props.quantity} items</strong>
         {this.props.items.map((item) => (
           <MiniCartContent key={item.id}>
             <DetailsWrapper>
               <ProductName name={item.name} />
               <ProductPrice prices={item.prices[this.props.priceIndex]} />
-              <ProductAttributes attributes={item.attributes} />
+              <CartItemAttributes item={item} />
+              {/* <ProductAttributes item={item} /> */}
             </DetailsWrapper>
             <ProductQuantity
               product={item}
@@ -51,8 +53,8 @@ class MiniCart extends Component {
               style={{
                 border: "1px solid rgba(29, 31, 34, 1)",
                 background: "#fff",
-                padding: "1rem 2rem",
-                width: '40%'
+                padding: ".5rem 1rem",
+                minWidth: '40%'
               }}
               onClick={this.props.close}
             >
@@ -61,10 +63,12 @@ class MiniCart extends Component {
           </Link>
           <div
             style={{
-              border: "1px solid rgba(29, 31, 34, 1)",
+              border: "none",
               background: "rgba(94, 206, 123, 1)",
-              padding: "1rem 2rem",
-              width: '40%'
+              padding: ".5rem 1rem",
+              minWidth: '40%',
+              color: '#fff',
+              textAlign: 'center'
             }}
             onClick={this.props.close}
           >

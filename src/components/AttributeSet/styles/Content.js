@@ -8,9 +8,10 @@ export const AttributeContent = styled.div`
   border: 1px solid;
   margin-right: 0.5rem;
   padding: 0.5rem;
+  //transition: .4s ease-in-out;
 
   &:hover {
-    background: #ccc;
+    background: #000;
     color: #fff;
     cursor: pointer;
   }

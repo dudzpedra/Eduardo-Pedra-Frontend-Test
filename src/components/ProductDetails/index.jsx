@@ -26,7 +26,7 @@ class ProductDetails extends Component {
       const itemToAdd = {
         ...this.props.product,
         id: newItemId,
-        attributes: selectedAttributes,
+        selectedAttributes: selectedAttributes,
         quantity: 1,
       };
 
@@ -60,7 +60,6 @@ class ProductDetails extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  product: state.products.product,
   index: state.currency.selectedIndex,
   attributes: state.products.selectedAttributes,
 });

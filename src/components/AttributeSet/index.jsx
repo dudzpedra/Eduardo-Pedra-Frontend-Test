@@ -12,6 +12,10 @@ class AttributeSet extends Component {
     });
   };
 
+  componentDidUpdate() {
+    if (this.props.selectedAttribute) console.log('attribute set did update', this.props.selectedAttribute.items[0].id);
+  }
+
   render() {
     return (
       <div>
@@ -21,10 +25,10 @@ class AttributeSet extends Component {
             <AttributeContent
               key={item.id}
               onClick={() => this.handleClick(item.id)}
-              /* style={{
-                background: this.state.itemsIds === item.id && "#000",
-                color: this.state.item && "#fff",
-              }} */
+              style={{
+                background: this.props.selectedAttribute && this.props.selectedAttribute.items[0].id === item.id ? "#000" : "#fff",
+                color: this.props.selectedAttribute && this.props.selectedAttribute.items[0].id === item.id ? "#fff" : "#000",
+              }}
             >
               {item.value}
             </AttributeContent>
@@ -36,7 +40,7 @@ class AttributeSet extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  selectedAttributes: state.products.selectedAttributes,
+  selectedAttribute: state.products.selectedAttributes[0],
 });
 const mapDispatchToProps = { selectAttribute };
 
