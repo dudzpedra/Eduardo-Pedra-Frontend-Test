@@ -24,7 +24,6 @@ class CartItem extends Component {
           <div>
             <ProductHeader product={this.props.product} />
             <CartItemAttributes item={this.props.product} />
-            {/* <ProductAttributes attributes={this.props.product.attributes} /> */}
             <ProductPrice prices={this.props.product.prices[this.props.index]} />
           </div>
           <div style={{ display: 'flex', width: '20%', justifyContent: 'space-between'}}>
