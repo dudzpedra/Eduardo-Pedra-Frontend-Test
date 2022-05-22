@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { DescriptionWrapper } from "./styles/Wrapper";
 
 class ProductDescription extends Component {
   render() {
     return (
-      <div
+      <DescriptionWrapper
         dangerouslySetInnerHTML={{ __html: this.props.description }}
-      ></div>
+      ></DescriptionWrapper>
     );
   }
 }

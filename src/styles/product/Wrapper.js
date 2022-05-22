@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const ProductWrapper = styled.div`
   display: flex;
   width: 90%;
-  height: 80%;
-  margin: 1rem auto;
+  height: 80vh;
+  margin: 0 auto;
 `
 
 ProductWrapper.displayName = 'ProductWrapper'
