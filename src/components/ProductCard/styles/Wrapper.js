@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 386px;
+  width: 30%;
   cursor: pointer;
-  margin: 1rem 1rem 1rem 0;
+  padding: .5rem;
   display: flex;
   flex-direction: column;;
   &:hover {
@@ -14,7 +14,7 @@ export const Card = styled.div`
 Card.displayName = "Card";
 
 export const Content = styled.div`
-  padding: 1rem;
+  width: 354px;
 `;
 
 Content.displayName = "Content";
