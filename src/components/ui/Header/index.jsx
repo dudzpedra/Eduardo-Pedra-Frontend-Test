@@ -35,7 +35,7 @@ class Header extends Component {
           <Navigation>
             {this.props.categories &&
               this.props.categories.map((category) => (
-                <Link to={category.name === "all" ? "/" : "/" + category.name}>
+                <Link key={category.name} to={category.name === "all" ? "/" : "/" + category.name}>
                   {category.name.toUpperCase()}
                 </Link>
               ))}

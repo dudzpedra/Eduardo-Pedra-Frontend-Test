@@ -4,46 +4,61 @@ import { getCurrencies, setCurrency } from "../../store/currencyActions";
 import { setIndex } from "../../store/cartActions";
 import { CurrencyWrapper } from "./styles/Wrapper";
 import { CurrencyOption } from "./styles/Option";
+import { CurrencyList } from "./styles/List";
+import up from '../../assets/arrow-up.svg'
+import down from '../../assets/arrow-down.svg'
+import { CurrencyHeader } from "./styles/Header";
 
 class CurrencySwitcher extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showItems: false,
+      selected: null,
+    };
+  }
   componentDidMount() {
     this.props.getCurrencies();
   }
-  handleSelect = ({ target }) => {
-    this.props.setCurrency(target.value);
-    this.props.setIndex(target.value);
+  handleSelect = (currency, id) => {
+    this.props.setCurrency(id);
+    this.props.setIndex(id);
+
+    this.setState({ selected: currency.symbol });
+    this.setState({ showItems: false });
   };
+  toggleMenu = () => this.setState({ showItems: !this.state.showItems });
   render() {
     return (
-      <>
-        {/* <label htmlFor="currencies">{this.props.selectedCurrency.symbol}</label> */}
-        <CurrencyWrapper
-          name="currencies"
-          id="currencies"
-          style={{
-            border: "none",
-          }}
-          onChange={this.handleSelect}
-        >
-          {this.props.currencies &&
-            this.props.currencies.map((c, index) => (
+      <CurrencyWrapper>
+        <div>
+          <CurrencyHeader onClick={this.toggleMenu}>
+            <strong>
+              {this.state.selected !== null ? this.state.selected : "$"}
+            </strong>
+            <img src={this.state.showItems ? up : down} alt="Select Currency" width={6} height={3} />
+          </CurrencyHeader>
+        </div>
+        {this.state.showItems && (
+          <CurrencyList>
+            {this.props.currencies.map((currency, index) => (
               <CurrencyOption
-                key={c.label}
-                defaultValue={c.label === "USD" ? true : false}
-                value={index}
+                key={currency.label}
+                onClick={() => this.handleSelect(currency, index)}
               >
-                {c.symbol} {c.label}
+                {currency.symbol} {currency.label}
               </CurrencyOption>
             ))}
-        </CurrencyWrapper>
-      </>
+          </CurrencyList>
+        )}
+      </CurrencyWrapper>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
   currencies: state.currency.currencies,
-  /* selectedCurrency: state.currency.selectedCurrency, */
+  selectedCurrency: state.currency.selectedCurrency,
 });
 
 const mapDispatchToProps = { getCurrencies, setCurrency, setIndex };

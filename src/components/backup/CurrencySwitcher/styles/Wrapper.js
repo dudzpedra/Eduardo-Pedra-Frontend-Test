@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const CurrencyWrapper = styled.div`
-  position: relative;
+export const CurrencyWrapper = styled.select`
   &:hover {
     cursor: pointer;
   }
