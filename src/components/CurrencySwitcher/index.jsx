@@ -5,8 +5,8 @@ import { setIndex } from "../../store/cartActions";
 import { CurrencyWrapper } from "./styles/Wrapper";
 import { CurrencyOption } from "./styles/Option";
 import { CurrencyList } from "./styles/List";
-import up from '../../assets/arrow-up.svg'
-import down from '../../assets/arrow-down.svg'
+import up from "../../assets/arrow-up.svg";
+import down from "../../assets/arrow-down.svg";
 import { CurrencyHeader } from "./styles/Header";
 
 class CurrencySwitcher extends Component {
@@ -31,14 +31,15 @@ class CurrencySwitcher extends Component {
   render() {
     return (
       <CurrencyWrapper>
-        <div>
-          <CurrencyHeader onClick={this.toggleMenu}>
-            <strong>
-              {this.state.selected !== null ? this.state.selected : "$"}
-            </strong>
-            <img src={this.state.showItems ? up : down} alt="Select Currency" width={6} height={3} />
-          </CurrencyHeader>
-        </div>
+        <CurrencyHeader onClick={this.toggleMenu}>
+          <strong>
+            {this.state.selected !== null ? this.state.selected : "$"}
+          </strong>
+          <img
+            src={this.state.showItems ? up : down}
+            alt="Select Currency"
+          />
+        </CurrencyHeader>
         {this.state.showItems && (
           <CurrencyList>
             {this.props.currencies.map((currency, index) => (
