@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const SwatchListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .1rem;
 `
 SwatchListWrapper.displayName = 'SwatchListWrapper'
 
 export const SwatchContentWrapper = styled.div`
-  width: 20px;
-  height: 20px;
+  width: 1.2rem;
+  height: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { SwatchContent } from "./styles/Content";
 import { SwatchList } from "./styles/List";
+import { AttributeName } from "./styles/Text";
 import { SwatchContentWrapper, SwatchListWrapper } from "./styles/Wrapper";
 
 class CartSwatchAttribute extends Component {
@@ -15,7 +16,7 @@ class CartSwatchAttribute extends Component {
   render() {
     return (
       <SwatchListWrapper>
-        <p>{this.props.attribute.name}:</p>
+        <AttributeName>{this.props.attribute.name}:</AttributeName>
         <SwatchList>
           {this.props.attribute.items.map((item) => (
             <SwatchContentWrapper
