@@ -4,6 +4,6 @@ export const SwatchContent = styled.div`
   width: 16px;
   height: 16px;
   background: ${props => props.displayColor};
-  border: ${props => props.selected && '1px solid'};
+  border: ${props => props.displayColor === '#FFFFFF' && '1px solid #000'};
 `
 SwatchContent.displayName = 'SwatchContent'

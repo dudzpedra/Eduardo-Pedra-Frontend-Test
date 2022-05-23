@@ -12,6 +12,7 @@ const GET_PRODUCT = gql`
       attributes {
         id
         name
+        type
         items {
           id
           displayValue

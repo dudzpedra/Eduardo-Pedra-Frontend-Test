@@ -13,6 +13,7 @@ const GET_CATEGORIES = gql`
         category
         attributes {
           id
+          type
           name
           items {
             displayValue
