@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import ProductPrice from "../ProductPrice";
 import { Image } from "./styles/Image";
-import { Card, Content } from "./styles/Wrapper";
+import { Card, Content, ImageWrapper } from "./styles/Wrapper";
 import icon from "../../assets/add-to-cart.svg";
 import { AddToCartIcon } from "./styles/Icon";
 import { addToCart } from "../../store/cartActions";
+import { OutOfStock } from "./styles/Text";
 
 class ProductCard extends Component {
   handleAdd = () => {
@@ -35,8 +36,9 @@ class ProductCard extends Component {
   render() {
     return (
       <Link to={"/products/" + this.props.product.id}>
-        <Card>
-          <div style={{ position: "relative" }}>
+        <Card inStock={this.props.product.inStock}>
+          <ImageWrapper>
+            {!this.props.product.inStock && <OutOfStock>OUT OF STOCK</OutOfStock>}
             <Image
               src={this.props.product.gallery[0]}
               alt={this.props.product.name}
@@ -47,7 +49,7 @@ class ProductCard extends Component {
               id="add-to-cart-icon"
               onClick={this.handleAdd}
             />
-          </div>
+          </ImageWrapper>
           <Content>
             <p>
               {this.props.product.brand} {this.props.product.name}

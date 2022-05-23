@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 30%;
+  width: 100%;
+  height: 444px;
   cursor: pointer;
   padding: .5rem;
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
+  filter: opacity(${props => props.inStock ? '100%' : '40%'});
+
   &:hover {
     box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
 
     #add-to-cart-icon {
-      display: block;
+      display: ${props => props.inStock && 'block'};
     }
   }
 `;
@@ -18,7 +21,12 @@ export const Card = styled.div`
 Card.displayName = "Card";
 
 export const Content = styled.div`
-  width: 354px;
+  width: 100%;
 `;
 
 Content.displayName = "Content";
+
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`

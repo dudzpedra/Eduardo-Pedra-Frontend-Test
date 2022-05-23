@@ -6,7 +6,7 @@ export const AddToCartIcon = styled.img`
   position: absolute;
   display: none;
   bottom: -20px;
-  left: 265%;
+  right: .5rem;
 `
 
 AddToCartIcon.displayName = 'AddToCartIcon'

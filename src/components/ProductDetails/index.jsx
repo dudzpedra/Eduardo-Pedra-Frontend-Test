@@ -58,7 +58,7 @@ class ProductDetails extends Component {
           <strong>PRICE:</strong>
           <ProductPrice prices={this.props.product.prices[this.props.index]} />
         </div>
-        <AddToCartButton onClick={this.handleAdd} />
+        <AddToCartButton onClick={this.handleAdd} disabled={this.props.product.inStock ? false : true} />
         <ProductDescription />
       </DetailsWrapper>
     );
