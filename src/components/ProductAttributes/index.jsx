@@ -10,12 +10,12 @@ class ProductAttributes extends Component {
         {this.props.attributes
           .filter((att) => att.type !== "swatch")
           .map((att) => (
-            <AttributeSet key={att.id} attribute={att} item={this.props.item} />
+            <AttributeSet key={att.id} attribute={att} />
           ))}
         {this.props.attributes
           .filter((att) => att.type === "swatch")
           .map((att) => (
-            <ColorAttribute key={att.id} attribute={att} item={this.props.item} />
+            <ColorAttribute key={att.id} attribute={att} />
           ))}
       </ProductAttributesWrapper>
     );

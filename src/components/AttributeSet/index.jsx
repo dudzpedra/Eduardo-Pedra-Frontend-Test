@@ -12,23 +12,26 @@ class AttributeSet extends Component {
     });
   };
 
-  componentDidUpdate() {
-    if (this.props.selectedAttribute) console.log('attribute set did update', this.props.selectedAttribute.items[0].id);
-  }
-
   render() {
     return (
       <div>
         <strong>{this.props.attribute.name.toUpperCase()}:</strong>
         <AttributeWrapper>
-          {this.props.attribute.items.map((item) => (
+          {this.props.attribute.items.map((item, index) => (
             <AttributeContent
-              key={item.id}
+              key={index}
               onClick={() => this.handleClick(item.id)}
-              style={{
-                background: this.props.selectedAttribute && this.props.selectedAttribute.items[0].id === item.id ? "#000" : "#fff",
-                color: this.props.selectedAttribute && this.props.selectedAttribute.items[0].id === item.id ? "#fff" : "#000",
-              }}
+              selected={
+                this.props.selectedAttributes
+                  .map(
+                    (att) =>
+                      att.name === this.props.attribute.name &&
+                      att.items.map((item) => item.id).join()
+                  )
+                  .find((id) => id === item.id)
+                  ? true
+                  : false
+              }
             >
               {item.value}
             </AttributeContent>
@@ -40,7 +43,7 @@ class AttributeSet extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  selectedAttribute: state.products.selectedAttributes[0],
+  selectedAttributes: state.products.selectedAttributes,
 });
 const mapDispatchToProps = { selectAttribute };
 

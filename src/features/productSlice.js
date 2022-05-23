@@ -25,7 +25,7 @@ const productSlice = createSlice({
       );
 
       const isSelectedAlready = state.selectedAttributes.find(
-        (att) => att.id === attribute.id
+        (att) => att.id === attribute.id && att.name === attribute.name
       );
 
       if (isSelectedAlready) {

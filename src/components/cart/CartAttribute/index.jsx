@@ -11,6 +11,7 @@ class CartAttribute extends Component {
     super(props);
     this.state = {
       selectedIds: this.props.item.selectedAttributes.map((att) =>
+        att.name === this.props.attribute.name &&
         att.items.map((item) => item.id).join()
       ),
     };

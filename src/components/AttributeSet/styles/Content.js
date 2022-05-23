@@ -9,12 +9,15 @@ export const AttributeContent = styled.div`
   margin-right: 0.5rem;
   padding: 0.5rem;
   //transition: .4s ease-in-out;
+  background: ${props => props.selected ? '#000' : '#fff'};
+  color: ${props => props.selected ? '#fff' : '#000'};
+  cursor: pointer;
 
-  &:hover {
+  /* &:hover {
     background: #000;
     color: #fff;
     cursor: pointer;
-  }
+  } */
   /* 
   &:active {
     background: #000;
