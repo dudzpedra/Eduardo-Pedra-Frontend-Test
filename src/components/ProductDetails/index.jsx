@@ -12,8 +12,14 @@ import ProductDescription from "../ProductDescription";
 class ProductDetails extends Component {
   handleAdd = () => {
     const selectedAttributes = this.props.attributes;
+    const productAttributesLength = this.props.product.attributes.length;
 
-    if (selectedAttributes.length > 0) {
+    let hasNoAttributes = productAttributesLength === 0 ? true : false;
+
+    if (
+      selectedAttributes.length === productAttributesLength ||
+      hasNoAttributes
+    ) {
       const productId = this.props.product.id;
       const attributeItemsIds = selectedAttributes.map(
         (att) => att.items[0].id
