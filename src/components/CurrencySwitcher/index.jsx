@@ -8,6 +8,7 @@ import { CurrencyList } from "./styles/List";
 import up from "../../assets/arrow-up.svg";
 import down from "../../assets/arrow-down.svg";
 import { CurrencyHeader } from "./styles/Header";
+import { CurrencyOverlay } from "./styles/Overlay";
 
 class CurrencySwitcher extends Component {
   constructor(props) {
@@ -28,8 +29,11 @@ class CurrencySwitcher extends Component {
     this.setState({ showItems: false });
   };
   toggleMenu = () => this.setState({ showItems: !this.state.showItems });
+  handleClose = () => this.setState({ showItems: false })
   render() {
     return (
+      <>
+      {this.state.showItems && <CurrencyOverlay onClick={this.handleClose}></CurrencyOverlay>}
       <CurrencyWrapper>
         <CurrencyHeader onClick={this.toggleMenu}>
           <p>
@@ -53,6 +57,7 @@ class CurrencySwitcher extends Component {
           </CurrencyList>
         )}
       </CurrencyWrapper>
+      </>
     );
   }
 }
