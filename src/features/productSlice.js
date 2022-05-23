@@ -13,6 +13,7 @@ const productSlice = createSlice({
     setProduct(state, action) {
       state.product = action.payload;
       state.selectedAttributes = []
+      state.selectedImageIndex = 0
     },
     selectImage(state, action) {
       state.selectedImageIndex = action.payload;
