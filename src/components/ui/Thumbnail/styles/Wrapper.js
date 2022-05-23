@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ThumbnailWrapper = styled.img`
-  width: 100%;
-  margin-bottom: 1rem;
-  &:hover {
-    cursor: pointer;
-  }
-`
+  width: 40%;
+  cursor: pointer;
 
-ThumbnailWrapper.displayName = 'ThumbnailWrapper'
+  &:hover {
+    border: 1px solid #000;
+  }
+`;
+
+ThumbnailWrapper.displayName = "ThumbnailWrapper";
