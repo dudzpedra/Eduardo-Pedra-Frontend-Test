@@ -14,10 +14,10 @@ class ProductCard extends Component {
 
     const selectedAttributes = this.props.product.attributes.map((att) => ({
       ...att,
-      items: att.items[0],
+      items: att.items.slice(0, 1),
     }));
 
-    const attributeItemsIds = selectedAttributes.map((att) => att.items.id);
+    const attributeItemsIds = selectedAttributes.map((att) => att.items[0].id);
 
     const newItemId = `${productId}-${attributeItemsIds
       .map((id) => id)
@@ -29,7 +29,7 @@ class ProductCard extends Component {
       selectedAttributes: selectedAttributes,
       quantity: 1,
     };
-    
+
     this.props.addToCart(itemToAdd);
   };
   render() {
