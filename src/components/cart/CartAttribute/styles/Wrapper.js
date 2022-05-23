@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const AttributeListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .2rem;
 `
 AttributeListWrapper.displayName = 'AttributeListWrapper'
 
 export const AttributeContentWrapper = styled.div`
-  width: 2rem;
-  height: 32px;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;

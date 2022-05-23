@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { AttributeContent } from "./styles/Content";
 import { AttributeList } from "./styles/List";
+import { AttributeName } from "./styles/Text";
 import {
   AttributeContentWrapper,
   AttributeListWrapper,
@@ -19,7 +20,7 @@ class CartAttribute extends Component {
   render() {
     return (
       <AttributeListWrapper>
-        <p>{this.props.attribute.name}:</p>
+        <AttributeName>{this.props.attribute.name}:</AttributeName>
         <AttributeList>
           {this.props.attribute.items.map((item) => (
             <AttributeContentWrapper

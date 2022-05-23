@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const MiniCartContent = styled.div`
+export const MiniCartSection = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 32px;
+  gap: 1rem;
 `
 
-MiniCartContent.displayName = 'MiniCartContent'
+MiniCartSection.displayName = 'MiniCartSection'

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const AttributeContent = styled.div`
-  font-size: 12px;
+  font-size: 0.6em;
 `
 AttributeContent.displayName = 'AttributeContent'

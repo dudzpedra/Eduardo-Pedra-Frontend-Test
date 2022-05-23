@@ -5,7 +5,8 @@ import CartItemAttributes from "../CartItemAttributes";
 import ProductName from "../ProductName";
 import ProductPrice from "../ProductPrice";
 import ProductQuantity from "../ProductQuantity";
-import { MiniCartContent } from "./styles/Content";
+import { CartButton, CheckoutButton } from "./styles/Actions";
+import { MiniCartSection } from "./styles/Content";
 import { DetailsWrapper } from "./styles/Details";
 import { MiniCartWrapper } from "./styles/Wrapper";
 
@@ -23,7 +24,7 @@ class MiniCart extends Component {
       <MiniCartWrapper>
         <strong>My Bag, {this.props.quantity} items</strong>
         {this.props.items.map((item) => (
-          <MiniCartContent key={item.id}>
+          <MiniCartSection key={item.id}>
             <DetailsWrapper>
               <ProductName name={item.name} />
               <ProductPrice prices={item.prices[this.props.priceIndex]} />
@@ -39,40 +40,22 @@ class MiniCart extends Component {
               alt={item.name}
               width="40%"
             />
-          </MiniCartContent>
+          </MiniCartSection>
         ))}
-        <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between'}}>
-          <p><strong>Total</strong></p>
-          <p><strong>{this.props.total[this.props.priceIndex]}</strong></p>
-        </div>
-        <div style={{ display: "flex", width: "100%", justifyContent: 'space-between' }}>
+        <MiniCartSection>
+          <p>
+            <strong>Total</strong>
+          </p>
+          <p>
+            <strong>{this.props.total[this.props.priceIndex]}</strong>
+          </p>
+        </MiniCartSection>
+        <MiniCartSection>
           <Link to="/cart">
-            <div
-              style={{
-                border: "1px solid rgba(29, 31, 34, 1)",
-                background: "#fff",
-                padding: "16px 32px",
-                fontSize: '14px',
-              }}
-              onClick={this.props.close}
-            >
-              VIEW BAG
-            </div>
+            <CartButton onClick={this.props.close}>VIEW BAG</CartButton>
           </Link>
-          <div
-            style={{
-              border: "none",
-              background: "rgba(94, 206, 123, 1)",
-              padding: "16px 32px",
-              fontSize: '14px',
-              color: '#fff',
-              textAlign: 'center'
-            }}
-            onClick={this.props.close}
-          >
-            CHECKOUT
-          </div>
-        </div>
+          <CheckoutButton onClick={this.props.close}>CHECKOUT</CheckoutButton>
+        </MiniCartSection>
       </MiniCartWrapper>
     );
   }
@@ -81,7 +64,7 @@ class MiniCart extends Component {
 const mapStateToProps = (state) => ({
   priceIndex: state.currency.selectedIndex,
   imgIndex: state.products.selectedImageIndex,
-  total: state.cart.total
+  total: state.cart.total,
 });
 
 export default connect(mapStateToProps)(MiniCart);
