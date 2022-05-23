@@ -12,7 +12,7 @@ class CartAttribute extends Component {
     this.state = {
       selectedIds: this.props.item.selectedAttributes.map((att) =>
         att.name === this.props.attribute.name &&
-        att.items.map((item) => item.id).join()
+        (att.items.length > 0 ? att.items.map((item) => item.id).join() : att.items.id)
       ),
     };
   }

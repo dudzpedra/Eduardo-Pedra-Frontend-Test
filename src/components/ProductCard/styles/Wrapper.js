@@ -8,6 +8,10 @@ export const Card = styled.div`
   flex-direction: column;;
   &:hover {
     box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+
+    #add-to-cart-icon {
+      display: block;
+    }
   }
 `;
 
