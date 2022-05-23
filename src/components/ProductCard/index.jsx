@@ -15,8 +15,12 @@ class ProductCard extends Component {
             alt={this.props.product.name}
           />
           <Content>
-            <p>{this.props.product.name}</p>
-            <ProductPrice prices={this.props.product.prices[this.props.index]} />
+            <p>
+              {this.props.product.brand} {this.props.product.name}
+            </p>
+            <ProductPrice
+              prices={this.props.product.prices[this.props.index]}
+            />
           </Content>
         </Card>
       </Link>
@@ -25,7 +29,7 @@ class ProductCard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  index: state.currency.selectedIndex
-})
+  index: state.currency.selectedIndex,
+});
 
 export default connect(mapStateToProps)(ProductCard);
