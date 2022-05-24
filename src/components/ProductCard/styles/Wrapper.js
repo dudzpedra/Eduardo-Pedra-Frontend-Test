@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 100%;
-  height: 444px;
+  width: 22vw;
+  height: 354px;
   cursor: pointer;
   padding: .5rem;
   display: flex;
   flex-direction: column;
+  gap: .5rem;
+  flex-grow: 1;
   filter: opacity(${props => props.inStock ? '100%' : '40%'});
 
   &:hover {
