@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CartAttribute from "../cart/CartAttribute";
-import CartSwatchAttribute from "../cart/CartSwatchAttribute";
+import CartAttribute from "../CartAttribute";
+import CartSwatchAttribute from "../CartSwatchAttribute";
 
 class CartItemAttributes extends Component {
   render() {

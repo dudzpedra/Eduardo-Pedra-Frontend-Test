@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import CartList from "../components/CartList";
+import CartList from "../components/cart/CartList";
 import { CartWrapper } from "../styles/cart/Wrapper";
 import { addToCart, removeFromCart } from "../store/cartActions";
 import { Link } from "react-router-dom";

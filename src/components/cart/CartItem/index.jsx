@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import CartItemAttributes from "../CartItemAttributes";
-import ProductHeader from "../ProductHeader";
-import ProductPrice from "../ProductPrice";
+import ProductHeader from "../../ProductHeader";
+import ProductPrice from "../../ProductPrice";
 import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ButtonWrapper } from "../ui/AddToCartButton/styles/Wrapper";
+import { ButtonWrapper } from "../../ui/AddToCartButton/styles/Wrapper";
 
 class CartCheckout extends Component {
   render() {

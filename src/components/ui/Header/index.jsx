@@ -8,7 +8,7 @@ import logo from "../../../assets/a-logo.svg";
 import cart from "../../../assets/cart.svg";
 import CurrencySwitcher from "../../CurrencySwitcher";
 import { connect } from "react-redux";
-import CartOverlay from "../../CartOverlay";
+import CartOverlay from "../../cart/CartOverlay";
 
 class Header extends Component {
   constructor(props) {

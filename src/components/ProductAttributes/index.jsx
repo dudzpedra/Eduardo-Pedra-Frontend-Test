@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AttributeSet from "../AttributeSet";
-import ColorAttribute from "../ColorAttribute";
+import ColorAttribute from "../cart/ColorAttribute";
 import { ProductAttributesWrapper } from "./styles/Wrapper";
 
 class ProductAttributes extends Component {

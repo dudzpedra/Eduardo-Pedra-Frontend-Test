@@ -3,7 +3,7 @@ import reactDom from "react-dom";
 import { connect } from "react-redux";
 import { ModalOverlay } from "./styles/Overlay";
 import { ModalWrapper } from "./styles/Wrapper";
-import { addToCart, removeFromCart } from "../../store/cartActions";
+import { addToCart, removeFromCart } from "../../../store/cartActions";
 import MiniCart from "../MiniCart";
 
 class CartOverlay extends Component {
