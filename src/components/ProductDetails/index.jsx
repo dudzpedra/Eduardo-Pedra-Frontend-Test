@@ -14,12 +14,7 @@ class ProductDetails extends Component {
     const selectedAttributes = this.props.attributes;
     const productAttributesLength = this.props.product.attributes.length;
 
-    let hasNoAttributes = productAttributesLength === 0 ? true : false;
-
-    if (
-      selectedAttributes.length === productAttributesLength ||
-      hasNoAttributes
-    ) {
+    if (selectedAttributes.length === productAttributesLength) {
       const productId = this.props.product.id;
       const attributeItemsIds = selectedAttributes.map(
         (att) => att.items[0].id
@@ -58,7 +53,10 @@ class ProductDetails extends Component {
           <strong>PRICE:</strong>
           <ProductPrice prices={this.props.product.prices[this.props.index]} />
         </div>
-        <AddToCartButton onClick={this.handleAdd} disabled={this.props.product.inStock ? false : true} />
+        <AddToCartButton
+          onClick={this.handleAdd}
+          disabled={this.props.product.inStock ? false : true}
+        />
         <ProductDescription />
       </DetailsWrapper>
     );
