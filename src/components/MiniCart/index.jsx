@@ -47,7 +47,7 @@ class MiniCart extends Component {
             <strong>Total</strong>
           </p>
           <p>
-            <strong>{this.props.total[this.props.priceIndex]}</strong>
+            <strong>{this.props.symbol} {this.props.total[this.props.priceIndex]}</strong>
           </p>
         </MiniCartSection>
         <MiniCartSection>
@@ -63,6 +63,7 @@ class MiniCart extends Component {
 
 const mapStateToProps = (state) => ({
   priceIndex: state.currency.selectedIndex,
+  symbol: state.currency.selectedCurrency.symbol,
   imgIndex: state.products.selectedImageIndex,
   total: state.cart.total,
 });
