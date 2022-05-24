@@ -6,5 +6,11 @@ export const OutOfStock = styled.p`
   text-align: center;
   width: 100%;
 `
-
 OutOfStock.displayName = 'OutOfStock'
+
+export const ProductTitle = styled.div`
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 160%;
+`
+ProductTitle.displayName = 'ProductTitle'

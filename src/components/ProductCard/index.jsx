@@ -7,7 +7,7 @@ import { Card, Content, ImageWrapper } from "./styles/Wrapper";
 import icon from "../../assets/add-to-cart.svg";
 import { AddToCartIcon } from "./styles/Icon";
 import { addToCart } from "../../store/cartActions";
-import { OutOfStock } from "./styles/Text";
+import { OutOfStock, ProductTitle } from "./styles/Text";
 
 class ProductCard extends Component {
   handleAdd = () => {
@@ -51,9 +51,9 @@ class ProductCard extends Component {
             />
           </ImageWrapper>
           <Content>
-            <p>
+            <ProductTitle>
               {this.props.product.brand} {this.props.product.name}
-            </p>
+            </ProductTitle>
             <ProductPrice
               prices={this.props.product.prices[this.props.index]}
             />

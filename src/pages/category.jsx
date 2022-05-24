@@ -4,6 +4,7 @@ import { getCategory } from "../store/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
 import { CategoryWrapper } from "../styles/category/Wrapper";
+import { CategoryTitle } from "../styles/category/Title";
 
 class Category extends Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class Category extends Component {
       <CategoryWrapper>
         {this.props.category ? (
           <>
-            <h1>{this.props.category.name.toUpperCase()}</h1>
+            <CategoryTitle>{this.props.category.name.toUpperCase()}</CategoryTitle>
             <ProductList products={this.props.category.products} />
           </>
         ) : (
