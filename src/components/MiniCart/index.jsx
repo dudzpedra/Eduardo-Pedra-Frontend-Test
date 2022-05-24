@@ -47,7 +47,7 @@ class MiniCart extends Component {
             <strong>Total</strong>
           </p>
           <p>
-            <strong>{this.props.symbol} {this.props.total[this.props.priceIndex]}</strong>
+            <strong>{this.props.symbol} {this.props.total[this.props.priceIndex].toFixed(2)}</strong>
           </p>
         </MiniCartSection>
         <MiniCartSection>
