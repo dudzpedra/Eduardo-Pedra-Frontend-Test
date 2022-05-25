@@ -6,6 +6,8 @@ const GET_CATEGORIES = gql`
       name
       products {
         id
+        brand
+        __typename @skip(if: true)
         name
         inStock
         gallery
@@ -28,7 +30,6 @@ const GET_CATEGORIES = gql`
           }
           amount
         }
-        brand
       }
     }
   }
