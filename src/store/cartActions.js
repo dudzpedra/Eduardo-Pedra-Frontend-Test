@@ -1,4 +1,4 @@
-import { add, remove, setPriceIndex } from "../features/cartSlice"
+import { add, remove, setImageIndex, setPriceIndex } from "../features/cartSlice"
 
 export const addToCart = (product) => {
   return (dispatch) => {
@@ -21,6 +21,16 @@ export const setIndex = (payload) => {
     }
   };
 };
+
+export const selectImgIndex = (payload) => {
+  return (dispatch) => {
+    try {
+      dispatch(setImageIndex(payload))
+    } catch (e) {
+      console.error(e);
+    }
+  }
+}
 
 /* export const selectAttribute = (payload) => {
   return (dispatch) => {

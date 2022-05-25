@@ -7,6 +7,7 @@ import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
 import { ImageWrapper, ItemImage } from "./styles/Image";
+import { selectImgIndex } from '../../../store/cartActions'
 
 class CartItem extends Component {
   handleAdd = () => {
@@ -16,6 +17,22 @@ class CartItem extends Component {
   handleRemove = () => {
     this.props.remove(this.props.product.id);
   };
+
+  handleNext = () => {
+    let nextIndex = this.props.product.imgIndex + 1
+    if (nextIndex > (this.props.product.gallery.length - 1)) {
+      nextIndex = 0
+    }
+    this.props.selectImgIndex({imgIndex: nextIndex, id: this.props.product.id})
+  }
+
+  handlePrev = () => {
+    let prevIndex = this.props.product.imgIndex - 1
+    if (prevIndex < 0) {
+      prevIndex = this.props.product.gallery.length - 1
+    }
+    this.props.selectImgIndex({imgIndex: prevIndex, id: this.props.product.id})
+  }
 
   render() {
     return (
@@ -49,10 +66,10 @@ class CartItem extends Component {
             </div>
             <ImageWrapper>
               <ItemImage
-                src={this.props.product.gallery[0]}
+                src={this.props.product.gallery[this.props.product.imgIndex]}
                 alt={this.props.product.name}
               />
-              <ImageSlider />
+              <ImageSlider next={this.handleNext} prev={this.handlePrev} />
             </ImageWrapper>
           </div>
         </ItemContent>
@@ -62,7 +79,9 @@ class CartItem extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  index: state.currency.selectedIndex,
+  index: state.currency.selectedIndex
 });
 
-export default connect(mapStateToProps)(CartItem);
+const mapDispatchToProps = { selectImgIndex }
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartItem);

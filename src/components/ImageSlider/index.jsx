@@ -15,10 +15,10 @@ class ImageSlider extends Component {
           justifyContent: "space-between",
         }}
       >
-        <SliderButton>
+        <SliderButton onClick={this.props.prev}>
           <img src={left} alt="Previous" />
         </SliderButton>
-        <SliderButton>
+        <SliderButton onClick={this.props.next}>
           <img src={right} alt="Next" />
         </SliderButton>
       </SliderWrapper>

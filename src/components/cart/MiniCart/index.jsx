@@ -36,7 +36,7 @@ class MiniCart extends Component {
               remove={() => this.handleRemove(item.id)}
             />
             <img
-              src={item.gallery[this.props.imgIndex]}
+              src={item.gallery[item.imgIndex]}
               alt={item.name}
               width="40%"
             />
@@ -64,7 +64,6 @@ class MiniCart extends Component {
 const mapStateToProps = (state) => ({
   priceIndex: state.currency.selectedIndex,
   symbol: state.currency.selectedCurrency.symbol,
-  imgIndex: state.products.selectedImageIndex,
   total: state.cart.total,
 });
 
