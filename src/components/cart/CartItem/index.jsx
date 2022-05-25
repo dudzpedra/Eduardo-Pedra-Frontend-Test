@@ -7,74 +7,56 @@ import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
 import { ImageWrapper, ItemImage } from "./styles/Image";
-import { selectImgIndex } from '../../../store/cartActions'
-import { QuantityButton } from "./styles/Button";
+import { selectImgIndex } from "../../../store/cartActions";
+import ProductQuantity from "../../ProductQuantity";
+import { ItemDetails } from "./styles/Details";
+import { ItemDisplay } from "./styles/Display";
 
 class CartItem extends Component {
   handleAdd = () => {
     this.props.add(this.props.product);
   };
-
   handleRemove = () => {
     this.props.remove(this.props.product.id);
   };
-
+  selectImg = (imgIndex, id) => this.props.selectImgIndex({ imgIndex, id });
   handleNext = () => {
-    let nextIndex = this.props.product.imgIndex + 1
-    if (nextIndex > (this.props.product.gallery.length - 1)) {
-      nextIndex = 0
-    }
-    this.props.selectImgIndex({imgIndex: nextIndex, id: this.props.product.id})
-  }
-
+    let nextIndex = this.props.product.imgIndex + 1;
+    if (nextIndex > this.props.product.gallery.length - 1) nextIndex = 0;
+    this.selectImg(nextIndex, this.props.product.id);
+  };
   handlePrev = () => {
-    let prevIndex = this.props.product.imgIndex - 1
-    if (prevIndex < 0) {
-      prevIndex = this.props.product.gallery.length - 1
-    }
-    this.props.selectImgIndex({imgIndex: prevIndex, id: this.props.product.id})
-  }
-
+    let prevIndex = this.props.product.imgIndex - 1;
+    if (prevIndex < 0) prevIndex = this.props.product.gallery.length - 1;
+    this.selectImg(prevIndex, this.props.product.id);
+  };
   render() {
     return (
       <ItemWrapper>
-        <hr />
         <ItemContent>
-          <div>
+          <ItemDetails>
             <ProductHeader product={this.props.product} />
             <CartItemAttributes item={this.props.product} />
             <ProductPrice
               prices={this.props.product.prices[this.props.index]}
             />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              width: "15%",
-              height: '90%',
-              gap: '.3rem',
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                alignItems: 'center'
-              }}
-            >
-              <QuantityButton onClick={this.handleAdd}>+</QuantityButton>
-              <p>{this.props.product.quantity}</p>
-              <QuantityButton onClick={this.handleRemove}>-</QuantityButton>
-            </div>
+          </ItemDetails>
+          <ItemDisplay>
+            <ProductQuantity
+              product={this.props.product}
+              add={this.handleAdd}
+              remove={this.handleRemove}
+            />
             <ImageWrapper>
               <ItemImage
                 src={this.props.product.gallery[this.props.product.imgIndex]}
                 alt={this.props.product.name}
               />
-              {this.props.product.gallery.length > 1 && <ImageSlider next={this.handleNext} prev={this.handlePrev} />}
+              {this.props.product.gallery.length > 1 && (
+                <ImageSlider next={this.handleNext} prev={this.handlePrev} />
+              )}
             </ImageWrapper>
-          </div>
+          </ItemDisplay>
         </ItemContent>
       </ItemWrapper>
     );
@@ -82,9 +64,9 @@ class CartItem extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  index: state.currency.selectedIndex
+  index: state.currency.selectedIndex,
 });
 
-const mapDispatchToProps = { selectImgIndex }
+const mapDispatchToProps = { selectImgIndex };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartItem);
