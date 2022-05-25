@@ -5,8 +5,8 @@ export const MiniCartWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 1rem;
-  max-height: 67vh;
+  gap: .5rem;
+  max-height: 60vh;
   overflow: auto;
   ::-webkit-scrollbar {
     width: 0.5rem;
