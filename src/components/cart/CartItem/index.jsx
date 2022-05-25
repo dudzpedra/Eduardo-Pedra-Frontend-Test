@@ -69,7 +69,7 @@ class CartItem extends Component {
                 src={this.props.product.gallery[this.props.product.imgIndex]}
                 alt={this.props.product.name}
               />
-              <ImageSlider next={this.handleNext} prev={this.handlePrev} />
+              {this.props.product.gallery.length > 1 && <ImageSlider next={this.handleNext} prev={this.handlePrev} />}
             </ImageWrapper>
           </div>
         </ItemContent>
