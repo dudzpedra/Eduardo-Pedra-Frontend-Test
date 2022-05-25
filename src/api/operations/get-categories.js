@@ -30,7 +30,6 @@ const GET_CATEGORIES = gql`
         }
         brand
       }
-      __typename
     }
   }
 `;
