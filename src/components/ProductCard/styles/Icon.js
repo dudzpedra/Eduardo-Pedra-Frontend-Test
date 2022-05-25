@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const AddToCartIcon = styled.img`
-  width: 52px;
-  height: 52px;
+  width: 15%;
   position: absolute;
   display: none;
-  bottom: -20px;
+  bottom: -.6rem;
   right: .5rem;
 `
 

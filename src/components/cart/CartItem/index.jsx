@@ -8,6 +8,7 @@ import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
 import { ImageWrapper, ItemImage } from "./styles/Image";
 import { selectImgIndex } from '../../../store/cartActions'
+import { QuantityButton } from "./styles/Button";
 
 class CartItem extends Component {
   handleAdd = () => {
@@ -49,7 +50,8 @@ class CartItem extends Component {
           <div
             style={{
               display: "flex",
-              width: "20%",
+              width: "15%",
+              height: '90%',
               gap: '.3rem',
             }}
           >
@@ -58,11 +60,12 @@ class CartItem extends Component {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
+                alignItems: 'center'
               }}
             >
-              <button onClick={this.handleAdd}>+</button>
+              <QuantityButton onClick={this.handleAdd}>+</QuantityButton>
               <p>{this.props.product.quantity}</p>
-              <button onClick={this.handleRemove}>-</button>
+              <QuantityButton onClick={this.handleRemove}>-</QuantityButton>
             </div>
             <ImageWrapper>
               <ItemImage

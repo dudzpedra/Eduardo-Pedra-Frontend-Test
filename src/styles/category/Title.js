@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const CategoryTitle = styled.p`
-  font-size: 42px;
+  font-size: 2em;
   line-height: 160%;
-  margin: 1rem 0;
+  margin: 0 0 1rem;
 `;
 
 CategoryTitle.displayName = 'CategoryTitle'

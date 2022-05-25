@@ -7,14 +7,7 @@ import { SliderWrapper } from "./styles/Wrapper";
 class ImageSlider extends Component {
   render() {
     return (
-      <SliderWrapper
-        style={{
-          position: "absolute",
-          bottom: 0,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <SliderWrapper>
         <SliderButton onClick={this.props.prev}>
           <img src={left} alt="Previous" />
         </SliderButton>
