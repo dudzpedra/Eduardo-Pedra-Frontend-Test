@@ -9,7 +9,7 @@ export const OutOfStock = styled.p`
 OutOfStock.displayName = 'OutOfStock'
 
 export const ProductTitle = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 300;
   line-height: 160%;
 `

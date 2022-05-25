@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 22vw;
+  width: 25vw;
   //height: 354px;
   cursor: pointer;
   padding: 0.5rem;
