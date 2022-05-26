@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ButtonWrapper } from "../../ui/AddToCartButton/styles/Wrapper";
+import { CheckoutWrapper } from "./styles/Wrapper";
 
 class CartCheckout extends Component {
   render() {
     return (
-      <div>
+      <CheckoutWrapper>
         <p>
           Tax 21%: <strong>{this.props.symbol}{' '}{(this.props.total[this.props.index] * 0.21).toFixed(2)}</strong>{" "}
         </p>
@@ -16,7 +17,7 @@ class CartCheckout extends Component {
           Total: <strong>{this.props.symbol}{' '}{this.props.total[this.props.index].toFixed(2)}</strong>{" "}
         </p>
         <ButtonWrapper>ORDER</ButtonWrapper>
-      </div>
+      </CheckoutWrapper>
     );
   }
 }
