@@ -35,7 +35,7 @@ class ProductCard extends Component {
   };
   render() {
     return (
-      <Link to={"/products/" + this.props.product.id}>
+      <Link to={`/${this.props.product.id}`}>
         <Card inStock={this.props.product.inStock}>
           <ImageWrapper>
             {!this.props.product.inStock && <OutOfStock>OUT OF STOCK</OutOfStock>}

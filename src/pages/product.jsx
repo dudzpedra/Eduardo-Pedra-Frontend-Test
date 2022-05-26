@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 class Product extends Component {
   componentDidMount() {
     let path = window.location.pathname;
-    let id = path.replace("/products/", "");
+    let id = path.replace("/", "");
     this.props.getProduct(id);
   }
 

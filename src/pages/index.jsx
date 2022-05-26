@@ -26,7 +26,7 @@ class AppRoutes extends Component {
                   element={<Category category={category} />}
                 />
               ))}
-            <Route path="/products/:id" element={<Product />} />
+            <Route path="/:id" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
           </Route>
         </Routes>

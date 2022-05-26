@@ -36,7 +36,7 @@ class ProductDetails extends Component {
       alert("Product added to cart succesfully");
 
       let path = window.location.pathname;
-      let id = path.replace("/products/", "");
+      let id = path.replace("/", "");
 
       this.props.getProduct(id);
     } else {
