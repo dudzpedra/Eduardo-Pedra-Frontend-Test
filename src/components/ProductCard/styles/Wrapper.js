@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  width: 12vw;
-  min-width: 225px;
+  //width: 14vw;
+  width: 15rem;
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
