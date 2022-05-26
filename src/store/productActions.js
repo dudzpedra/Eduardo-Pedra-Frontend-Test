@@ -14,7 +14,6 @@ export const getProduct = (id) => {
 
 export const setImageIndex = (id) => {
   return (dispatch) => {
-    console.log('selected image id: ', id);
     dispatch(selectImage(id))
   }
 }

@@ -9,7 +9,7 @@ export const Navigation = styled.nav`
     padding: 2rem 1rem;
     transition: .3s ease-in-out;
   }
-  a:focus {
+  .active {
     border-bottom: 0.2rem solid rgba(94, 206, 123, 1);
   }
 `;

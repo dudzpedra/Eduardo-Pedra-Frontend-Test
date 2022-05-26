@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Actions, CartAction, CartQuantity } from "./styles/Actions";
 import { HeaderContent } from "./styles/Content";
 import { Navigation } from "./styles/Navigation";
@@ -35,9 +35,9 @@ class Header extends Component {
           <Navigation>
             {this.props.categories &&
               this.props.categories.map((category) => (
-                <Link key={category.name} to={category.name === "all" ? "/" : "/" + category.name}>
+                <NavLink key={category.name} to={category.name === "all" ? "/" : "/" + category.name}>
                   {category.name.toUpperCase()}
-                </Link>
+                </NavLink>
               ))}
           </Navigation>
           <img src={logo} alt="Logo" />
