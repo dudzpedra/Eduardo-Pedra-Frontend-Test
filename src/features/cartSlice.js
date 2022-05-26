@@ -20,7 +20,6 @@ const cartSlice = createSlice({
         alreadyOnCart.quantity++;
       } else {
         state.items.push(newItem);
-        //try to implement total.fill to fill with 0 and use prices length
       }
       state.total = state.total.map(
         (value, index) => (value += newItem.prices[index].amount)
