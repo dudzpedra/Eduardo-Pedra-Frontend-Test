@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { ProductBrandWrapper } from './styles/Wrapper'
 
 class ProductBrand extends Component {
   render() {
-    return <h4>{this.props.brand}</h4>
+    return <ProductBrandWrapper>{this.props.brand}</ProductBrandWrapper>
   }
 }
 

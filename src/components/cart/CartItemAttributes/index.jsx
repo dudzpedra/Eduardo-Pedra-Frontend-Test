@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import CartAttribute from "../CartAttribute";
 import CartSwatchAttribute from "../CartSwatchAttribute";
+import { ItemAttributesWrapper } from "./styles/Wrapper";
 
 class CartItemAttributes extends Component {
   render() {
     return (
-      <div>
+      <ItemAttributesWrapper>
         {this.props.item.attributes
           .filter((att) => att.type !== "swatch")
           .map((att) => (
@@ -16,7 +17,7 @@ class CartItemAttributes extends Component {
           .map((att) => (
             <CartSwatchAttribute key={att.id} attribute={att} item={this.props.item} />
           ))}
-      </div>
+      </ItemAttributesWrapper>
     );
   }
 }

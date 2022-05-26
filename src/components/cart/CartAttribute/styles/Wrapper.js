@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const AttributeListWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .2rem;
+  gap: .5rem;
 `
 AttributeListWrapper.displayName = 'AttributeListWrapper'
 
