@@ -35,9 +35,11 @@ const cartSlice = createSlice({
       } else {
         alreadyOnCart.quantity--;
       }
-      state.total = state.total.map(
-        (value, index) => (value -= alreadyOnCart.prices[index].amount)
-      );
+      state.total = state.total.map((value, index) => {
+        value -= alreadyOnCart.prices[index].amount;
+        if (value < 0) value = 0
+        return value
+      });
       state.quantity--;
     },
     setPriceIndex(state, action) {
@@ -45,9 +47,9 @@ const cartSlice = createSlice({
     },
     setImageIndex(state, action) {
       const { imgIndex, id } = action.payload;
-      const itemToUpdate = state.items.find(item => item.id === id)
+      const itemToUpdate = state.items.find((item) => item.id === id);
       if (itemToUpdate) {
-        itemToUpdate.imgIndex = imgIndex
+        itemToUpdate.imgIndex = imgIndex;
       }
     },
   },
