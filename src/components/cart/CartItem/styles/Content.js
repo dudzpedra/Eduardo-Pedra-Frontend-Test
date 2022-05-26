@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ItemContent = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  min-height: 15vh;
 `
 
 ItemContent.displayName = 'ItemContent'

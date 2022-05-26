@@ -8,8 +8,11 @@ export const QuantityButton = styled.button`
   border: 2px solid #000;
   background: #fff;
   cursor: pointer;
+  transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) .4s;
+
   &:hover {
-    background: #ddd;
+    background: #000;
+    color: #fff;
   }
 `
 

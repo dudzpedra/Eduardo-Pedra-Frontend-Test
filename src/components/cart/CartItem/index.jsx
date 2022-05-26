@@ -36,10 +36,10 @@ class CartItem extends Component {
         <ItemContent>
           <ItemDetails>
             <ProductHeader product={this.props.product} />
-            <CartItemAttributes item={this.props.product} />
             <ProductPrice
               prices={this.props.product.prices[this.props.index]}
             />
+            <CartItemAttributes item={this.props.product} />
           </ItemDetails>
           <ItemDisplay>
             <ProductQuantity

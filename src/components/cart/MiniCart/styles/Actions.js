@@ -5,9 +5,11 @@ export const CartButton = styled.button`
   background: #fff;
   padding: 1rem 3rem;
   cursor: pointer;
+  transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) .5s;
 
   &:hover {
-    background: #ddd;
+    background: #000;
+    color: #fff;
   }
 `;
 
@@ -19,9 +21,11 @@ export const CheckoutButton = styled.button`
   color: #fff;
   padding: 1rem 3rem;
   cursor: pointer;
-
+  transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) .5s;
+  opacity: 0.8;
+  
   &:hover {
-    opacity: 0.9;
+    opacity: 1;
   }
 `;
 

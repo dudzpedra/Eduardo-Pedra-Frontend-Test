@@ -13,11 +13,12 @@ export const ColorWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: ${props => props.selected && '1px solid rgba(94, 206, 123, 1)'};
+  border: ${props => props.selected && '2px solid rgba(94, 206, 123, 1)'};
   cursor: pointer;
+  transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) .5s;
 
   &:hover {
-    border: 1px solid rgba(94, 206, 123, 1);
+    border: 2px solid rgba(94, 206, 123, 1);
   }
 `;
 

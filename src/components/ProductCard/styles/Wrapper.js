@@ -10,8 +10,10 @@ export const Card = styled.div`
   gap: 0.5rem;
   flex-grow: 1;
   filter: opacity(${(props) => (props.inStock ? "100%" : "40%")});
+  transition: all ease-in-out .5s;
+
   &:hover {
-    box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.19);
+    box-shadow: 0px 4px 35px 0px rgba(168, 172, 176, 0.29);
     #add-to-cart-icon {
       display: ${(props) => props.inStock && "block"};
     }
