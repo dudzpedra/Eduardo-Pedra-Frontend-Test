@@ -1,5 +1,5 @@
-import { selectCurrency, setCurrencies } from "../features/currencySlice";
-import fetchCurrencies from "../services/fetch-currencies";
+import { selectCurrency, setCurrencies } from "../../features/currencySlice";
+import fetchCurrencies from "../../services/fetch-currencies";
 
 export const getCurrencies = () => {
   return async (dispatch) => {

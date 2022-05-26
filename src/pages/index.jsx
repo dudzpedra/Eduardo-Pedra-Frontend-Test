@@ -5,7 +5,7 @@ import Category from "./category";
 import Product from "./product";
 import Cart from "./cart";
 import { connect } from "react-redux";
-import { getCategories } from "../store/categoriesActions";
+import { getCategories } from "../store/actions/categoriesActions";
 
 class AppRoutes extends Component {
   componentDidMount() {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { AttributeContent } from "./styles/Content";
 import { AttributeWrapper } from "./styles/Wrapper";
-import { selectAttribute } from "../../store/productActions";
+import { selectAttribute } from "../../store/actions/productActions";
 
 class AttributeSet extends Component {
   handleClick = (itemId) => {

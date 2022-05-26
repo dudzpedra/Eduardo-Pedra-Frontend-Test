@@ -1,5 +1,5 @@
-import { selectImage, setAttribute, setProduct } from '../features/productSlice'
-import fetchProduct from '../services/fetch-product'
+import { selectImage, setAttribute, setProduct } from '../../features/productSlice'
+import fetchProduct from '../../services/fetch-product'
 
 export const getProduct = (id) => {
   return async (dispatch) => {

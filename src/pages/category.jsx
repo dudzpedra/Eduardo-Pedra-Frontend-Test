@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCategory } from "../store/categoriesActions";
+import { getCategory } from "../store/actions/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
 import { CategoryWrapper } from "../styles/category/Wrapper";

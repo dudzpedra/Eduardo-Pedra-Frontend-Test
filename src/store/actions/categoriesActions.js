@@ -1,6 +1,6 @@
-import { setCategories, setCategory } from "../features/categorySlice";
-import fetchCategories from "../services/fetch-categories";
-import fetchCategory from "../services/fetch-category";
+import { setCategories, setCategory } from "../../features/categorySlice";
+import fetchCategories from "../../services/fetch-categories";
+import fetchCategory from "../../services/fetch-category";
 
 export const getCategories = () => {
   return async (dispatch) => {

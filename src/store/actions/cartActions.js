@@ -1,4 +1,4 @@
-import { add, remove, setImageIndex, setPriceIndex } from "../features/cartSlice"
+import { add, remove, setImageIndex, setPriceIndex } from "../../features/cartSlice"
 
 export const addToCart = (product) => {
   return (dispatch) => {

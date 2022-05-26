@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getCurrencies, setCurrency } from "../../store/currencyActions";
-import { setIndex } from "../../store/cartActions";
+import { getCurrencies, setCurrency } from "../../store/actions/currencyActions";
+import { setIndex } from "../../store/actions/cartActions";
 import { CurrencyWrapper } from "./styles/Wrapper";
 import { CurrencyOption } from "./styles/Option";
 import { CurrencyList } from "./styles/List";

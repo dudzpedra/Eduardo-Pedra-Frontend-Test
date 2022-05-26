@@ -7,7 +7,7 @@ import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
 import { ImageWrapper, ItemImage } from "./styles/Image";
-import { selectImgIndex } from "../../../store/cartActions";
+import { selectImgIndex } from "../../../store/actions/cartActions";
 import ProductQuantity from "../../ProductQuantity";
 import { ItemDetails } from "./styles/Details";
 import { ItemDisplay } from "./styles/Display";

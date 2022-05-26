@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ColorContent } from "./styles/Content";
 import { ColorListWrapper, ColorWrapper } from "./styles/Wrapper";
-import { selectAttribute } from "..//../../store/productActions";
+import { selectAttribute } from "..//../../store/actions/productActions";
 import { connect } from "react-redux";
 
 class ColorAttribute extends Component {

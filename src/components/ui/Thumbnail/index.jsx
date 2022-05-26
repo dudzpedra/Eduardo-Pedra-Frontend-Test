@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ThumbnailWrapper } from "./styles/Wrapper";
-import { setImageIndex } from '../../../store/productActions'
+import { setImageIndex } from '../../../store/actions/productActions'
 import { connect } from "react-redux";
 
 class Thumbnail extends Component {

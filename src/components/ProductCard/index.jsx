@@ -6,7 +6,7 @@ import { Image } from "./styles/Image";
 import { Card, Content, ImageWrapper } from "./styles/Wrapper";
 import icon from "../../assets/add-to-cart.svg";
 import { AddToCartIcon } from "./styles/Icon";
-import { addToCart } from "../../store/cartActions";
+import { addToCart } from "../../store/actions/cartActions";
 import { OutOfStock, ProductTitle } from "./styles/Text";
 
 class ProductCard extends Component {
