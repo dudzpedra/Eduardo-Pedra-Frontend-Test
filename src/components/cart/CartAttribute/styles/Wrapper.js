@@ -8,8 +8,8 @@ export const AttributeListWrapper = styled.div`
 AttributeListWrapper.displayName = 'AttributeListWrapper'
 
 export const AttributeContentWrapper = styled.div`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;

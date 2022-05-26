@@ -4,10 +4,10 @@ export const ModalWrapper = styled.div`
   position: absolute;
   top: 80px;
   right: 2rem;
-  max-width: 260px;
-  width: 25%;
+  min-width: 350px;
+  max-width: 360px;
   background: #fff;
-  padding: .5rem;
+  padding: 1rem;
   z-index: 1000;
 `
 

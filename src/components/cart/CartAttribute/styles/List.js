@@ -4,6 +4,6 @@ export const AttributeList = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: .2rem;
+  gap: .25rem;
 `
 AttributeList.displayName = 'AttributeList'
