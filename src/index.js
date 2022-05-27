@@ -7,12 +7,15 @@ import client from "./utils/client";
 import AppRoutes from "./pages";
 import { Provider } from "react-redux";
 import store from "./store";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <ApolloProvider client={client}>
     <Provider store={store}>
-      <AppRoutes />
+      <ErrorBoundary>
+        <AppRoutes />
+      </ErrorBoundary>
     </Provider>
   </ApolloProvider>
 );

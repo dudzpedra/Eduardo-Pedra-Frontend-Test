@@ -7,8 +7,8 @@ class ProductHeader extends Component {
   render() {
     return (
       <ProductHeaderWrapper>
-        <ProductBrand brand={this.props.product.brand} />
-        <ProductName name={this.props.product.name} />
+        <ProductBrand brand={this.props.brand} />
+        <ProductName name={this.props.name} />
       </ProductHeaderWrapper>
     )
   }
