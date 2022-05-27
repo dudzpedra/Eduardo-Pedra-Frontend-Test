@@ -7,7 +7,7 @@ class ProductQuantity extends Component {
     return (
       <QuantityWrapper>
         <QuantityButton onClick={this.props.add}>+</QuantityButton>
-        <p>{this.props.product.quantity}</p>
+        <p>{this.props.quantity}</p>
         <QuantityButton onClick={this.props.remove}>-</QuantityButton>
       </QuantityWrapper>
     );

@@ -39,7 +39,7 @@ class CartItem extends Component {
         </ItemDetails>
         <ItemDisplay>
           <ProductQuantity
-            product={this.props.product}
+            {...this.props.product}
             add={this.handleAdd}
             remove={this.handleRemove}
           />

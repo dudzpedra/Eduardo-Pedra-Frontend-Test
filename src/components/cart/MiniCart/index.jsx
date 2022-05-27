@@ -9,6 +9,7 @@ import { MiniCartSection } from "./styles/Content";
 import { DetailsWrapper } from "./styles/Details";
 import { MiniCartWrapper } from "./styles/Wrapper";
 import ProductHeader from "../../ProductHeader";
+import TotalPrice from "../TotalPrice";
 
 class MiniCart extends Component {
   handleAdd = (item) => {
@@ -31,7 +32,7 @@ class MiniCart extends Component {
               <CartItemAttributes item={item} />
             </DetailsWrapper>
             <ProductQuantity
-              product={item}
+              {...item}
               add={() => this.handleAdd(item)}
               remove={() => this.handleRemove(item.id)}
             />
@@ -43,12 +44,7 @@ class MiniCart extends Component {
           </MiniCartSection>
         ))}
         <MiniCartSection>
-          <p>
-            <strong>Total</strong>
-          </p>
-          <p>
-            <strong>{this.props.symbol} {this.props.total[this.props.priceIndex].toFixed(2)}</strong>
-          </p>
+          <TotalPrice />
         </MiniCartSection>
         <MiniCartSection>
           <Link to="/cart">
@@ -62,9 +58,7 @@ class MiniCart extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  priceIndex: state.currency.selectedIndex,
-  symbol: state.currency.selectedCurrency.symbol,
-  total: state.cart.total,
+  priceIndex: state.currency.selectedIndex
 });
 
 export default connect(mapStateToProps)(MiniCart);
