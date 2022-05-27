@@ -11,7 +11,7 @@ import ProductDescription from "../ProductDescription";
 
 class ProductDetails extends Component {
   handleAdd = () => {
-    const selectedAttributes = this.props.attributes;
+    const selectedAttributes = this.props.selectedAttributes;
     const productAttributesLength = this.props.product.attributes.length;
 
     if (selectedAttributes.length === productAttributesLength) {
@@ -47,15 +47,13 @@ class ProductDetails extends Component {
   render() {
     return (
       <DetailsWrapper>
-        <ProductHeader product={this.props.product} />
-        <ProductAttributes attributes={this.props.product.attributes} />
-        <div>
-          <strong>PRICE:</strong>
-          <ProductPrice prices={this.props.product.prices[this.props.index]} />
-        </div>
+        <ProductHeader {...this.props.product} />
+        <ProductAttributes {...this.props.product} />
+        <strong>PRICE:</strong>
+        <ProductPrice prices={this.props.product.prices[this.props.index]} />
         <AddToCartButton
           onClick={this.handleAdd}
-          disabled={this.props.product.inStock ? false : true}
+          disabled={!this.props.product.inStock && true}
         />
         <ProductDescription />
       </DetailsWrapper>
@@ -65,7 +63,7 @@ class ProductDetails extends Component {
 
 const mapStateToProps = (state) => ({
   index: state.currency.selectedIndex,
-  attributes: state.products.selectedAttributes,
+  selectedAttributes: state.products.selectedAttributes,
 });
 const mapDispatchToProps = { addToCart, getProduct };
 

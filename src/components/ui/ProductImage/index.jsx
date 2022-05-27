@@ -17,7 +17,7 @@ class ProductImage extends Component {
   render() {
     return (
       <ProductImageWrapper>
-        <Image src={this.props.product.gallery[this.props.index]} alt={this.props.product.name} />
+        <Image src={this.props.gallery[this.props.index]} alt={this.props.name} />
         {/* <ImageHover id='pointer'></ImageHover> */}
       </ProductImageWrapper>
     )

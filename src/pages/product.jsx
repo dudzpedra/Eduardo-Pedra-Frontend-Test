@@ -19,8 +19,8 @@ class Product extends Component {
       <>
         {this.props.product ? (
           <ProductWrapper>
-            <ImageList product={this.props.product} />
-            <ProductImage product={this.props.product} />
+            <ImageList {...this.props.product} />
+            <ProductImage {...this.props.product} />
             <ProductDetails product={this.props.product} />
           </ProductWrapper>
         ) : (
