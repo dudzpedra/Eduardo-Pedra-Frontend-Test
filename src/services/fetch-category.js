@@ -5,7 +5,7 @@ const fetchCategory = async (name) => {
   try {
     const { data } = await client.query({
       query: GET_CATEGORY,
-      variables: name,
+      variables: { name },
     });
     if (data) return data.category;
   } catch (e) {
