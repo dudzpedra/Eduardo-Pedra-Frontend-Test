@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItemAttributes from "../CartItemAttributes";
-import ProductName from "../../ProductName";
 import ProductPrice from "../../ProductPrice";
 import ProductQuantity from "../../ProductQuantity";
 import { CartButton, CheckoutButton } from "./styles/Actions";
 import { MiniCartSection } from "./styles/Content";
 import { DetailsWrapper } from "./styles/Details";
 import { MiniCartWrapper } from "./styles/Wrapper";
+import ProductHeader from "../../ProductHeader";
 
 class MiniCart extends Component {
   handleAdd = (item) => {
@@ -26,7 +26,7 @@ class MiniCart extends Component {
         {this.props.items.map((item) => (
           <MiniCartSection key={item.id}>
             <DetailsWrapper>
-              <ProductName name={item.name} />
+              <ProductHeader {...item} />
               <ProductPrice prices={item.prices[this.props.priceIndex]} />
               <CartItemAttributes item={item} />
             </DetailsWrapper>
