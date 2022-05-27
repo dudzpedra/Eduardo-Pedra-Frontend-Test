@@ -8,16 +8,18 @@ import { CategoryTitle } from "../styles/category/Title";
 
 class Category extends Component {
   componentDidMount() {
-    this.props.getCategory(this.props.category.name);
+    this.props.getCategory(this.props.name);
   }
 
   render() {
     return (
       <CategoryWrapper>
-        {this.props.category ? (
+        {this.props ? (
           <>
-            <CategoryTitle>{this.props.category.name.toUpperCase()}</CategoryTitle>
-            <ProductList products={this.props.category.products} />
+            <CategoryTitle>
+              {this.props.name.toUpperCase()}
+            </CategoryTitle>
+            <ProductList products={this.props.products} />
           </>
         ) : (
           <Loading />
@@ -27,10 +29,6 @@ class Category extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  tech: state.categories.tech,
-});
-
 const mapDispatchToProps = { getCategory };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Category);
+export default connect(() => ({}), mapDispatchToProps)(Category);
