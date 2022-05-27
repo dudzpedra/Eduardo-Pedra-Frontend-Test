@@ -4,7 +4,7 @@ export const MiniCartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
+  padding: 0 0.5rem;
   gap: 1rem;
   max-height: 60vh;
   overflow: auto;
