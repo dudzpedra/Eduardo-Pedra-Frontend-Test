@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import CartItemAttributes from "../CartItemAttributes";
 import ProductHeader from "../../ProductHeader";
 import ProductPrice from "../../ProductPrice";
-import { ItemContent } from "./styles/Content";
 import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
 import { ImageWrapper, ItemImage } from "./styles/Image";
@@ -33,31 +32,27 @@ class CartItem extends Component {
   render() {
     return (
       <ItemWrapper>
-        <ItemContent>
-          <ItemDetails>
-            <ProductHeader product={this.props.product} />
-            <ProductPrice
-              prices={this.props.product.prices[this.props.index]}
+        <ItemDetails>
+          <ProductHeader product={this.props.product} />
+          <ProductPrice prices={this.props.product.prices[this.props.index]} />
+          <CartItemAttributes item={this.props.product} />
+        </ItemDetails>
+        <ItemDisplay>
+          <ProductQuantity
+            product={this.props.product}
+            add={this.handleAdd}
+            remove={this.handleRemove}
+          />
+          <ImageWrapper>
+            <ItemImage
+              src={this.props.product.gallery[this.props.product.imgIndex]}
+              alt={this.props.product.name}
             />
-            <CartItemAttributes item={this.props.product} />
-          </ItemDetails>
-          <ItemDisplay>
-            <ProductQuantity
-              product={this.props.product}
-              add={this.handleAdd}
-              remove={this.handleRemove}
-            />
-            <ImageWrapper>
-              <ItemImage
-                src={this.props.product.gallery[this.props.product.imgIndex]}
-                alt={this.props.product.name}
-              />
-              {this.props.product.gallery.length > 1 && (
-                <ImageSlider next={this.handleNext} prev={this.handlePrev} />
-              )}
-            </ImageWrapper>
-          </ItemDisplay>
-        </ItemContent>
+            {this.props.product.gallery.length > 1 && (
+              <ImageSlider next={this.handleNext} prev={this.handlePrev} />
+            )}
+          </ImageWrapper>
+        </ItemDisplay>
       </ItemWrapper>
     );
   }
