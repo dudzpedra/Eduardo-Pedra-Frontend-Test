@@ -33,7 +33,7 @@ class CartItem extends Component {
     return (
       <ItemWrapper>
         <ItemDetails>
-          <ProductHeader product={this.props.product} />
+          <ProductHeader {...this.props.product} />
           <ProductPrice prices={this.props.product.prices[this.props.index]} />
           <CartItemAttributes item={this.props.product} />
         </ItemDetails>
