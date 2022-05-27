@@ -5,14 +5,12 @@ const fetchCategory = async (name) => {
   try {
     const { data } = await client.query({
       query: GET_CATEGORY,
-      variables: { name: name }
-    })
-    if (data) {
-      return(data.category)
-    }
+      variables: name,
+    });
+    if (data) return data.category;
   } catch (e) {
     console.error(e);
   }
-}
+};
 
-export default fetchCategory
+export default fetchCategory;

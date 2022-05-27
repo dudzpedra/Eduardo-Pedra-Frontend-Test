@@ -8,10 +8,10 @@ import { getProduct } from "../store/actions/productActions";
 import { connect } from "react-redux";
 
 class Product extends Component {
+  productId = window.location.pathname.replace("/", "");
+  
   componentDidMount() {
-    let path = window.location.pathname;
-    let id = path.replace("/", "");
-    this.props.getProduct(id);
+    this.props.getProduct(this.productId);
   }
 
   render() {
@@ -33,7 +33,6 @@ class Product extends Component {
 
 const mapStateToProps = (state) => ({
   product: state.products.product,
-  attributes: state.products.selectedAttributes,
 });
 
 const mapDispatchToProps = { getProduct };

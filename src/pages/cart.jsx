@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import CartList from "../components/cart/CartList";
-import { CartWrapper } from "../styles/cart/Wrapper";
+import EmptyCart from "../components/cart/EmptyCart";
+import { connect } from "react-redux";
 import { addToCart, removeFromCart } from "../store/actions/cartActions";
-import { Link } from "react-router-dom";
+import { CartWrapper } from "../styles/cart/Wrapper";
 
 class Cart extends Component {
   render() {
@@ -17,12 +17,7 @@ class Cart extends Component {
             remove={this.props.removeFromCart}
           />
         ) : (
-          <div>
-            <p>Your cart is empty.</p>
-            <p>
-              <Link to="/">Go back to home page</Link>
-            </p>
-          </div>
+          <EmptyCart />
         )}
       </CartWrapper>
     );
