@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Errorwrapper } from "./styles/Wrapper";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -18,7 +19,18 @@ class ErrorBoundary extends Component {
     return (
       <>
         {this.state.hasError ? (
-          <h1>Ops, something wrong is not right...</h1>
+          <Errorwrapper>
+            <h1>Ops, something wrong is not right...</h1>
+            <p>Consider trying the following steps:</p>
+            <ol>
+              <p>
+                <li>Refresh the page</li>
+              </p>
+              <p>
+                <li>Hit the back button to go to the previous page</li>
+              </p>
+            </ol>
+          </Errorwrapper>
         ) : (
           this.props.children
         )}
