@@ -8,8 +8,18 @@ import { getProduct } from "../../store/actions/productActions";
 import { connect } from "react-redux";
 import ProductHeader from "../ProductHeader";
 import ProductDescription from "../ProductDescription";
+import Notification from "../Notification";
+import notifications from "../../utils/notifications";
 
 class ProductDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showNotification: false,
+      notification: "",
+      notificationColor: ''
+    };
+  }
   handleAdd = () => {
     const selectedAttributes = this.props.selectedAttributes;
     const productAttributesLength = this.props.product.attributes.length;
@@ -30,17 +40,21 @@ class ProductDetails extends Component {
         selectedAttributes: selectedAttributes,
         quantity: 1,
       };
-
       this.props.addToCart(itemToAdd);
-
-      alert("Product added to cart succesfully");
 
       let path = window.location.pathname;
       let id = path.replace("/", "");
-
       this.props.getProduct(id);
+
+      this.setState({ showNotification: true, notification: notifications[0], notificationColor: 'green' });
+      setTimeout(() => {
+        this.setState({ showNotification: false });
+      }, 3000);
     } else {
-      alert("You must select the attributes");
+      this.setState({ showNotification: true, notification: notifications[1], notificationColor: 'red' });
+      setTimeout(() => {
+        this.setState({ showNotification: false });
+      }, 3000);
     }
   };
 
@@ -51,6 +65,9 @@ class ProductDetails extends Component {
         <ProductAttributes {...this.props.product} />
         <strong>PRICE:</strong>
         <ProductPrice prices={this.props.product.prices[this.props.index]} />
+        {this.state.showNotification && (
+          <Notification notification={this.state.notification} color={this.state.notificationColor} />
+        )}
         <AddToCartButton
           onClick={this.handleAdd}
           disabled={!this.props.product.inStock && true}
