@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import left from "../../assets/arrow-left.svg";
-import right from "../../assets/arrow-right.svg";
+import left from "../../assets/images/arrow-left.svg";
+import right from "../../assets/images/arrow-right.svg";
 import { SliderButton } from "./styles/Button";
 import { SliderWrapper } from "./styles/Wrapper";
 

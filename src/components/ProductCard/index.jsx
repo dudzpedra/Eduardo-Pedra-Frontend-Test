@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ProductPrice from "../ProductPrice";
 import { Image } from "./styles/Image";
 import { Card, Content, ImageWrapper } from "./styles/Wrapper";
-import icon from "../../assets/add-to-cart.svg";
+import icon from "../../assets/images/add-to-cart.svg";
 import { AddToCartIcon } from "./styles/Icon";
 import { addToCart } from "../../store/actions/cartActions";
 import { OutOfStock, ProductTitle } from "./styles/Text";
