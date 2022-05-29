@@ -6,7 +6,8 @@ My solution for the [Entry React Developer Test](https://www.notion.so/Entry-Rea
 
 ## Demonstration
 
-[![Watch the video](https://imgur.com/a/s9yMXN6)](https://youtu.be/W-5FDnKhu9E)
+[Watch the video](https://youtu.be/W-5FDnKhu9E)
+
 ## Stack
 
 ### Frontend
