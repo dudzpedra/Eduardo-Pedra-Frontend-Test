@@ -4,7 +4,7 @@ export const CurrencyOption = styled.button`
   padding: 1rem 0.5rem;
   border: none;
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.3s;
   background: #fff;
   transition: cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.5s;
 
