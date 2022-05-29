@@ -5,7 +5,8 @@ export const QuantityButton = styled.button`
   height: 24px;
   display: flex;
   justify-content: center;
-  border: 2px solid #000;
+  align-items: center;
+  border: 1px solid #000;
   background: #fff;
   cursor: pointer;
   transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) .4s;
