@@ -6,9 +6,7 @@ My solution for the [Entry React Developer Test](https://www.notion.so/Entry-Rea
 
 ## Demonstration
 
-[![Watch the video](https://ibb.co/qCcFjJJ)](https://youtu.be/W-5FDnKhu9E)
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/s9yMXN6"  ><a href="//imgur.com/a/s9yMXN6">react minimalist e-commerce</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
+[![Watch the video](https://imgur.com/a/s9yMXN6)](https://youtu.be/W-5FDnKhu9E)
 ## Stack
 
 ### Frontend
