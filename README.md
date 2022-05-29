@@ -6,7 +6,7 @@ My solution for the [Entry React Developer Test](https://www.notion.so/Entry-Rea
 
 ## Demonstration
 
-<a href="https://youtu.be/W-5FDnKhu9E" target="_blank" rel="noopener"><img href="https://ibb.co/qCcFjJJ" alt="Project Screenshot" /></a>
+[![Watch the video](https://ibb.co/qCcFjJJ)](https://youtu.be/W-5FDnKhu9E)
 
 ## Stack
 
