@@ -4,6 +4,10 @@ My solution for the [Entry React Developer Test](https://www.notion.so/Entry-Rea
 
 > This is a challenge by [Scandiweb](https://scandiweb.com/)
 
+## Demonstration
+
+<iframe src="https://youtu.be/W-5FDnKhu9E" title="React Minimalistic E-commerce"></iframe>
+
 ## Stack
 
 ### Frontend
