@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import CartItemAttributes from "../CartItemAttributes";
 import ProductPrice from "../../ProductPrice";
 import ProductQuantity from "../../ProductQuantity";
-import { CartButton, CheckoutButton } from "./styles/Actions";
-import { MiniCartSection } from "./styles/Content";
-import { DetailsWrapper } from "./styles/Details";
-import { MiniCartWrapper } from "./styles/Wrapper";
 import ProductHeader from "../../ProductHeader";
 import TotalPrice from "../TotalPrice";
+import {
+  CartButton,
+  CheckoutButton,
+  DetailsWrapper,
+  MiniCartSection,
+  MiniCartWrapper,
+} from "./styles";
 
 class MiniCart extends Component {
   handleAdd = (item) => {
@@ -58,7 +61,7 @@ class MiniCart extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  priceIndex: state.currency.selectedIndex
+  priceIndex: state.currency.selectedIndex,
 });
 
 export default connect(mapStateToProps)(MiniCart);

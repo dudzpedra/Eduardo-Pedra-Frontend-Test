@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { QuantityButton } from "./styles/Button";
-import { QuantityWrapper } from "./styles/Wrapper";
+import { QuantityButton, QuantityWrapper } from "./styles";
 
 class ProductQuantity extends Component {
   render() {

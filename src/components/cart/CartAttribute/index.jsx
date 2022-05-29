@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import { AttributeContent } from "./styles/Content";
-import { AttributeList } from "./styles/List";
-import { AttributeName } from "./styles/Text";
-import {
-  AttributeContentWrapper,
-  AttributeListWrapper,
-} from "./styles/Wrapper";
+import { AttributeContent, AttributeContentWrapper, AttributeList, AttributeListWrapper, AttributeName } from "./styles";
 
 class CartAttribute extends Component {
   constructor(props) {

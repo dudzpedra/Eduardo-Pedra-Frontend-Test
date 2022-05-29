@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { AttributeContent } from "./styles/Content";
-import { AttributeWrapper } from "./styles/Wrapper";
+import { AttributeContent, AttributeWrapper } from "./styles";
 import { selectAttribute } from "../../store/actions/productActions";
 
 class AttributeSet extends Component {

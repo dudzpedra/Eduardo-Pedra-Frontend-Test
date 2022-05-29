@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import left from "../../assets/images/arrow-left.svg";
 import right from "../../assets/images/arrow-right.svg";
-import { SliderButton } from "./styles/Button";
-import { SliderWrapper } from "./styles/Wrapper";
+import { SliderButton, SliderWrapper } from "./styles";
 
 class ImageSlider extends Component {
   render() {

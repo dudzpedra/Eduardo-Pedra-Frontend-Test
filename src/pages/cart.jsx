@@ -3,7 +3,7 @@ import CartList from "../components/cart/CartList";
 import EmptyCart from "../components/cart/EmptyCart";
 import { connect } from "react-redux";
 import { addToCart, removeFromCart } from "../store/actions/cartActions";
-import { CartWrapper } from "../styles/cart/Wrapper";
+import { CartWrapper } from "../assets/styles/cart/Wrapper";
 
 class Cart extends Component {
   render() {

@@ -2,13 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCurrencies, setCurrency } from "../../store/actions/currencyActions";
 import { setIndex } from "../../store/actions/cartActions";
-import { CurrencyWrapper } from "./styles/Wrapper";
-import { CurrencyOption } from "./styles/Option";
-import { CurrencyList } from "./styles/List";
+import { CurrencyWrapper, CurrencyHeader, CurrencyList, CurrencyOption, CurrencyOverlay } from "./styles";
 import up from "../../assets/images/arrow-up.svg";
 import down from "../../assets/images/arrow-down.svg";
-import { CurrencyHeader } from "./styles/Header";
-import { CurrencyOverlay } from "./styles/Overlay";
 
 class CurrencySwitcher extends Component {
   constructor(props) {

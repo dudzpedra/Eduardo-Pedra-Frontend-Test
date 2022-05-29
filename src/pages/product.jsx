@@ -3,7 +3,7 @@ import ImageList from "../components/ImageList";
 import ProductDetails from "../components/ProductDetails";
 import Loading from "../components/ui/Loading";
 import ProductImage from "../components/ui/ProductImage";
-import { ProductWrapper } from "../styles/product/Wrapper";
+import { ProductWrapper } from "../assets/styles/product/Wrapper";
 import { getProduct } from "../store/actions/productActions";
 import { connect } from "react-redux";
 

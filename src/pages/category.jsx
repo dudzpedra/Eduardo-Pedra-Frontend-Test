@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { getCategory } from "../store/actions/categoriesActions";
 import ProductList from "../components/ProductList";
 import Loading from "../components/ui/Loading";
-import { CategoryWrapper } from "../styles/category/Wrapper";
-import { CategoryTitle } from "../styles/category/Title";
+import { CategoryWrapper, CategoryTitle } from "../assets/styles/category";
 
 class Category extends Component {
   componentDidMount() {

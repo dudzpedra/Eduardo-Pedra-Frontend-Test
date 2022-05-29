@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import CartItemAttributes from "../CartItemAttributes";
 import ProductHeader from "../../ProductHeader";
 import ProductPrice from "../../ProductPrice";
-import { ItemWrapper } from "./styles/Wrapper";
 import ImageSlider from "../../ImageSlider";
-import { ImageWrapper, ItemImage } from "./styles/Image";
-import { selectImgIndex } from "../../../store/actions/cartActions";
 import ProductQuantity from "../../ProductQuantity";
-import { ItemDetails } from "./styles/Details";
-import { ItemDisplay } from "./styles/Display";
+import { connect } from "react-redux";
+import { selectImgIndex } from "../../../store/actions/cartActions";
+import { ImageWrapper, ItemDetails, ItemDisplay, ItemImage, ItemWrapper } from "./styles";
 
 class CartItem extends Component {
   handleAdd = () => {

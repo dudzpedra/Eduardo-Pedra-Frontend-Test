@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import { SwatchContent } from "./styles/Content";
-import { SwatchList } from "./styles/List";
-import { AttributeName } from "./styles/Text";
-import { SwatchContentWrapper, SwatchListWrapper } from "./styles/Wrapper";
+import {
+  SwatchContent,
+  AttributeName,
+  SwatchContentWrapper,
+  SwatchList,
+  SwatchListWrapper,
+} from "./styles";
 
 class CartSwatchAttribute extends Component {
   constructor(props) {

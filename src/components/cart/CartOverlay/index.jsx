@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import reactDom from "react-dom";
 import { connect } from "react-redux";
-import { ModalOverlay } from "./styles/Overlay";
-import { ModalWrapper } from "./styles/Wrapper";
+import { ModalOverlay, ModalWrapper } from "./styles";
 import { addToCart, removeFromCart } from "../../../store/actions/cartActions";
 import MiniCart from "../MiniCart";
 
