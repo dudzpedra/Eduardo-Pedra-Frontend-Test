@@ -6,7 +6,7 @@ My solution for the [Entry React Developer Test](https://www.notion.so/Entry-Rea
 
 ## Demonstration
 
-`<iframe src="https://youtu.be/W-5FDnKhu9E" title="React Minimalistic E-commerce"></iframe>`
+[<img href="https://ibb.co/qCcFjJJ" alt="Project Screenshot" />](https://youtu.be/W-5FDnKhu9E)
 
 ## Stack
 
