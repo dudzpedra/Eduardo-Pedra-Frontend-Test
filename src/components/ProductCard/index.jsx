@@ -8,11 +8,11 @@ import {
   ImageWrapper,
   AddToCartIcon,
   Image,
-  OutOfStock,
   ProductTitle,
 } from "./styles";
 import icon from "../../assets/images/add-to-cart.svg";
 import { addToCart } from "../../store/actions/cartActions";
+import ProductOutOfStock from "../ProductOutOfStock";
 
 class ProductCard extends Component {
   handleAdd = () => {
@@ -43,9 +43,7 @@ class ProductCard extends Component {
       <Link to={`/${this.props.product.id}`}>
         <Card inStock={this.props.product.inStock}>
           <ImageWrapper>
-            {!this.props.product.inStock && (
-              <OutOfStock>OUT OF STOCK</OutOfStock>
-            )}
+            {!this.props.product.inStock && <ProductOutOfStock />}
             <Image
               src={this.props.product.gallery[0]}
               alt={this.props.product.name}
