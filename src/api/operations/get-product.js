@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 const GET_PRODUCT = gql`
   query product($id: String!) {
     product(id: $id) {
+      __typename @skip(if: true)
       id
       name
       inStock
@@ -10,10 +11,12 @@ const GET_PRODUCT = gql`
       description
       category
       attributes {
+        __typename @skip(if: true)
         id
         name
         type
         items {
+          __typename @skip(if: true)
           id
           displayValue
           value

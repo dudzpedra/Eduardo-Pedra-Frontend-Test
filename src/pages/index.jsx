@@ -23,7 +23,7 @@ class AppRoutes extends Component {
                   key={category.name}
                   path={category.name !== "all" && `/${category.name}`}
                   index={category.name === "all" ? true : false}
-                  element={<Category {...category} />}
+                  element={<Category name={category.name} />}
                 />
               ))}
             <Route path="/:id" element={<Product />} />

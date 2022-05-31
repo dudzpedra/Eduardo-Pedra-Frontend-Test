@@ -9,6 +9,9 @@ class Category extends Component {
   componentDidMount() {
     this.props.getCategory(this.props.name);
   }
+  componentDidUpdate() {
+    this.props.getCategory(this.props.name);
+  }
 
   render() {
     return (
@@ -28,6 +31,9 @@ class Category extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  products: state.categories.category.products
+})
 const mapDispatchToProps = { getCategory };
 
-export default connect(() => ({}), mapDispatchToProps)(Category);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
