@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getCategory } from "../store/actions/categoriesActions";
 import ProductList from "../components/ProductList";
-import Loading from "../components/ui/Loading";
 import { CategoryWrapper, CategoryTitle } from "../assets/styles/category";
 
 class Category extends Component {
@@ -16,15 +15,13 @@ class Category extends Component {
   render() {
     return (
       <CategoryWrapper>
-        {this.props ? (
+        {this.props && (
           <>
             <CategoryTitle>
               {this.props.name.toUpperCase()}
             </CategoryTitle>
             <ProductList products={this.props.products} />
           </>
-        ) : (
-          <Loading />
         )}
       </CategoryWrapper>
     );

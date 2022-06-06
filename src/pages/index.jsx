@@ -5,11 +5,14 @@ import Category from "./category";
 import Product from "./product";
 import Cart from "./cart";
 import { connect } from "react-redux";
-import { getCategories } from "../store/actions/categoriesActions";
+import { getCategories, getCategory } from "../store/actions/categoriesActions";
 
 class AppRoutes extends Component {
   componentDidMount() {
     this.props.getCategories();
+  }
+  componentDidUpdate() {
+    this.props.getCategory(this.props.category.name)
   }
   render() {
     return (
@@ -37,8 +40,9 @@ class AppRoutes extends Component {
 
 const mapStateToProps = (state) => ({
   categories: state.categories.categoriesList,
+  category: state.categories.category
 });
 
-const mapDispatchToProps = { getCategories };
+const mapDispatchToProps = { getCategories, getCategory };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppRoutes);

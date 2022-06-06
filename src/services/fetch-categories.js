@@ -1,7 +1,7 @@
 import GET_CATEGORIES from "../api/operations/get-categories";
 import client from "../utils/client";
 
-const fetchCategories = async (name) => {
+const fetchCategories = async () => {
   try {
     const { data } = await client.query({
       query: GET_CATEGORIES,
