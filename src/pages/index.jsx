@@ -7,12 +7,17 @@ import Cart from "./cart";
 import { connect } from "react-redux";
 import { getCategories, getCategory } from "../store/actions/categoriesActions";
 
+let isFirstRender = true;
+
 class AppRoutes extends Component {
   componentDidMount() {
     this.props.getCategories();
   }
   componentDidUpdate() {
-    this.props.getCategory(this.props.category.name)
+    if (isFirstRender) {
+      this.props.getCategory(this.props.category.name)
+      isFirstRender = false
+    }
   }
   render() {
     return (
