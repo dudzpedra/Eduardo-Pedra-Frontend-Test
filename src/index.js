@@ -8,6 +8,11 @@ import AppRoutes from "./pages";
 import { Provider } from "react-redux";
 import store from "./store";
 import ErrorBoundary from "./components/ErrorBoundary";
+//import { debounce } from "debounce";
+import { saveState } from "./store/storage";
+
+//store.subscribe(debounce(() => saveState(store.getState()), 800));
+store.subscribe(() => saveState(store.getState()))
 
 const root = createRoot(document.getElementById("root"));
 root.render(
